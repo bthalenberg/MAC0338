@@ -563,3 +563,112 @@ Logo, o consumo de tempo esperado do algoritmo _randomSelect_ é $O(n)$.
 --------------
 
 ## Aula 7 - Ordenação em tempo linear
+
+**Cormen 8**
+
+Não é possível ter consumo de tempo menor do que $O(n \lg n)$ com um algoritmo de ordenação baseado em comparações. Isso porque eles são baseados em árvores de decisão. 
+
+No pior caso, o número de comparações feito será igual à altura h da árvore. Todas as $n!$ permutações de $1, \ldots, n$ devem ser folhas, e toda árvore binária de altura h tem no máximo $2^h$ folhas (provado por indução em h). Assim, devemos ter $2^h \geq n! \rarrow h \geq \lg(n!)$.
+
+\[
+(n!)^2 = \prod{i=0}^{n-1} (n-i)(i+1) \geq \prod{i=1}{n} n = n^n
+\]
+
+Portanto, $h \geq \lg(n!) \geq \frac{1}{2} n\lg n. Assim concluímos que todo algoritmo de ordenação baseado em comparações faz $\Omega(n\lg n)$ comparações no pior caso.
+
+### Counting sort
+
+Recebe inteiros n e k e um vetor A[1...n] onde cada elemento é um inteiro entre 1 e k. Devolve um vetor B[1...n] com os elementos de A[1...n] em ordem crescente.
+
+```
+   countingSort(A, n):
+1. for i <- to k do:
+2.     C[i] <- 0
+3. for j <- 1 to n do:
+4.     C[A[j]]++
+5. for i <- 2 to k do:
+6.     C[i] += C[i-1]
+7. for j <- to n decreasing 1 do:
+8.     B[C[A[j]]] <- A[j]
+9.     C[A[j]]--
+10. return B
+```
+
+#### Consumo de tempo
+
+| linha | consumo na linha |
+| ----  | ----             |
+| 1 | $\Theta(k)$ |
+| 2 | $O(k)$ |
+| 3 | $\Theta(n)$ |
+| 4 | $O(n)$ |
+| 5 | $\Theta(k)$ |
+| 6 | $O(k)$ |
+| 7 | $\Theta(n)$ |
+| 8 | $O(n)$ |
+| 9 | $O(n)$ |
+| 10 | $\Theta(1) |
+| total | $\Theta(k + n)$ |
+
+Logo, se $k = O(n)$, o consumo de tempo é $\Theta(n)$.
+
+### Radix sort
+
+Algoritmo usado para ordenar, por exemplo, inteiros não-negativos com d dígitos, ou strings com d caracteres.
+
+```
+   radixSort(A, n, d):
+1. for i <- 1 to d do:
+2.     ordene(A, n, i)
+```
+
+_ordene(A, n, i)_ ordena A[1...n] pelo i-ésimo dígito dos números em A por meio de um algoritmo estável. A ordenação estável só é relevante quando temos informação satélite.
+
+O consumo de tempo do Radixsort depende do algoritmo _ordene_. Se cada dígito é um inteiro de 1 a k (ou um caractere), podemos usar o _countingSort_. Neste caso, o consumo de tempo é $\Theta(d(k+n))$. Se d é limitado por uma constante e $k = O(n)$, então o consumo de tempo é $\Theta(n)$.
+
+### Bucket sort
+
+Recebe um inteiro n e um vetor A[1...n] onde cada elemento é um número no intervalo $[0, 1)$. Devolve um vetor $C[1...n]$ com os elementos de $A[1...n]$ em ordem crescente.
+
+```
+   bucketSort(A, n):
+1. for i <- 0 to n - 1 do:
+2.     B[i] <- NULL
+3. for i <- 1 to n do:
+4.     insert(B[ceiling(floor(nA[i]))], A[i])
+5. for i <- 0 to n - 1 do:
+6.     orderList(B[i])
+7. C <- concatenate(B, n)
+8. return C
+```
+
+* _insert_(p, x): insere x na lista apontada por p
+* _orderList_(p): ordena a lista apontada por p
+* _concatenate_(B, n): devolve a lista obtida da concatenação das listas apontadas por $B[0], \ldots, B[n-1]$.
+
+#### Consumo de tempo
+
+Suponha que os números em A[1...n] são uniformemente distribuídos no intervalo $[0, 1)$. Suponha que o _orderList_ seja o _insertionSort_. 
+
+Seja $X_i$ o número de elementos na lista B[i].
+
+Seja $X_{ij} = 1$ se o j-ésimo elemento foi para a lista B[i]. Observe que $X_i = \sum{j} X_{ij}.
+
+Definimos $Y_i$ como o número de comparações para ordenar a lista B[i].
+
+Observe que $Y_i \leq X_i^2$; logo, $E[Y_i] \leq E[X_i^2]$ = E[(\sum{j} X_{ij})^2]. Além disso, $E[Y_i] \leq \sum{j} E[X_{ij}^2] + \sum{j}\sum{k\neq j} E[X_{ij}X_{ik}]$.
+
+Note que $X_{ij}^2$ é uma variável aleatória binária, e $E[X_{ij}^2] = Pr[X_{ij}^2 = 1] = \frac{1}{n}.
+
+Para calcular $E[X_{ij}X_{ik}], j \neq k$, primeiro note que se tratam de variáveis aleatórias independentes. Portanto, $E[X_{ij}X_{ik}] = $E[X_{ij}] E[X_{ik}]$. Ademais, $E[X_{ij}] = \frac{1}{n}. Logo,
+
+\[
+E[Y_i] \leq \sum{j}\frac{1}{n} + \sum{j}\sum{k \neq j}\frac{1}{n^2} = \frac{n}{n} + n(n-1)\frac{1}{n^2}
+= 1 + (n-1)\frac{1}{n} = 2 - \frac{1}{n}
+\]
+
+Agora, seja $Y = \sum{i} Y_i$. Notque que $Y$ é o número de comparações realizadas pelo _bucketSort_ no total. Assim, $E[Y]$ é o número esperado de comparações realizadas pelo algoritmo, e tal numero determina o consumo assintótico de tempo do _bucketSort_. 
+
+\[
+E[Y] = \sum{i} E[Y_i] \leq 2n - 1 = O(n)
+\]
