@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>anotacoes-de-aula</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    extensions: [],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+    },
+    showMathMenu: false
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(183, 197, 211); background-color: rgb(29, 37, 44); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(132, 156, 180); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: white; }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(132, 156, 180); border-color: rgb(61, 78, 93); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(61, 78, 93); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(61, 78, 93); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(45, 58, 69); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(37, 47, 56); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(61, 78, 93) rgb(61, 78, 93) rgb(49, 63, 75); border-image: initial; background-color: rgb(45, 58, 69); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(183, 197, 211); background-color: rgb(29, 37, 44); overflow: auto; }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(132, 156, 180); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: white; }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(132, 156, 180); border-color: rgb(61, 78, 93); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(61, 78, 93); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(61, 78, 93); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(45, 58, 69); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(37, 47, 56); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(61, 78, 93) rgb(61, 78, 93) rgb(49, 63, 75); border-image: initial; background-color: rgb(45, 58, 69); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); overflow: scroll; }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { background-color: rgb(255, 255, 255); border-top: 1px solid rgb(204, 204, 204); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; background-color: rgba(0, 0, 0, 0.0392157); border-radius: 3px; }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; background: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border-radius: 3px; }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; background-color: transparent; border: 0px; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; background-color: rgb(252, 252, 252); border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-image: initial; border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview del { text-decoration: none; position: relative; }
+.markdown-preview del::after { border-bottom: 1px solid black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview .flash:not(li) { display: block; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  background-color: #1D252C;
+  color: #B7C5D3 !important;
+}
+pre.editor-colors .wrap-guide {
+  background-color: #333F4A;
+}
+pre.editor-colors .indent-guide {
+  color: #28323a;
+}
+pre.editor-colors .invisible-character {
+  color: #41505E;
+}
+pre.editor-colors .cursor {
+  border-color: #5EC4FF;
+}
+pre.editor-colors .line {
+  position: relative;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(44, 50, 59, 0.4);
+}
+pre.editor-colors .highlight.current-result .region {
+  background: #06131F;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  z-index: -1;
+}
+pre.editor-colors .highlight.find-result .region {
+  background: #29323b;
+  border-radius: 3px;
+  border: none;
+  z-index: -2;
+}
+pre.editor-colors .highlight.find-result .region * {
+  color: #41505E;
+}
+pre.editor-colors .bracket-matcher {
+  z-index: 110;
+  position: absolute !important;
+}
+pre.editor-colors .bracket-matcher .region {
+  color: #B7C5D3 !important;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(104, 161, 240, 0.5);
+  border-radius: 2px;
+  z-index: 120;
+}
+pre.editor-colors .gutter {
+  background-color: #1D252C;
+  color: #41505E;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  background-color: #41505E;
+  color: #718CA1 !important;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  color: #718CA1;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #718CA1;
+}
+pre.editor-colors .invisible {
+  color: #B7C5D3;
+}
+pre.editor-colors .cursor {
+  color: white;
+}
+pre.editor-colors .selection .region {
+  background-color: #2d3741;
+}
+.syntax--comment {
+  color: #41505E;
+  font-style: normal;
+  font-family: inherit;
+}
+.syntax--keyword {
+  color: #B62D65;
+}
+.syntax--keyword.syntax--control {
+  color: #5EC4FF;
+}
+.syntax--keyword.syntax--operator {
+  color: #5EC4FF;
+}
+.syntax--keyword.syntax--other.syntax--special-method {
+  color: #5EC4FF;
+}
+.syntax--keyword.syntax--other.syntax--unit {
+  color: #D98E48;
+}
+.syntax--storage {
+  color: #008B94;
+}
+.syntax--constant {
+  color: #E27E8D;
+}
+.syntax--constant.syntax--character.syntax--escape {
+  color: #70E1E8;
+}
+.syntax--constant.syntax--numeric {
+  color: #E27E8D;
+}
+.syntax--constant.syntax--other.syntax--color {
+  color: #70E1E8;
+}
+.syntax--constant.syntax--other.syntax--symbol {
+  color: #8BD49C;
+}
+.syntax--variable {
+  color: #718CA1;
+}
+.syntax--variable.syntax--interpolation {
+  color: #cd2d45;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #EBBF83;
+}
+.syntax--invalid.syntax--illegal {
+  background-color: #D95468;
+  color: #1D252C;
+}
+.syntax--string {
+  color: #68A1F0;
+}
+.syntax--string.syntax--regexp {
+  color: #70E1E8;
+}
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded {
+  color: #D98E48;
+}
+.syntax--string.syntax--other.syntax--link {
+  color: #D95468;
+}
+.syntax--punctuation.syntax--definition.syntax--comment {
+  color: #41505E;
+}
+.syntax--punctuation.syntax--definition.syntax--string,
+.syntax--punctuation.syntax--definition.syntax--variable,
+.syntax--punctuation.syntax--definition.syntax--parameters,
+.syntax--punctuation.syntax--definition.syntax--array {
+  color: #68A1F0;
+}
+.syntax--punctuation.syntax--definition.syntax--heading,
+.syntax--punctuation.syntax--definition.syntax--identity {
+  color: #5EC4FF;
+}
+.syntax--punctuation.syntax--definition.syntax--bold {
+  color: #EBBF83;
+  font-weight: bold;
+}
+.syntax--punctuation.syntax--definition.syntax--italic {
+  color: #B62D65;
+  font-style: italic;
+}
+.syntax--punctuation.syntax--section.syntax--embedded {
+  color: #68A1F0;
+}
+.syntax--support.syntax--class {
+  color: #33CED8;
+}
+.syntax--support.syntax--function {
+  color: #70E1E8;
+}
+.syntax--support.syntax--function.syntax--any-method {
+  color: #5EC4FF;
+}
+.syntax--entity.syntax--name.syntax--function {
+  color: #70E1E8;
+}
+.syntax--entity.syntax--name.syntax--type {
+  color: #33CED8;
+  text-decoration: none;
+}
+.syntax--entity.syntax--other.syntax--inherited-class {
+  color: #33CED8;
+}
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #33CED8;
+}
+.syntax--entity.syntax--name.syntax--section {
+  color: #5EC4FF;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  color: #008B94;
+  text-decoration: none;
+}
+.syntax--entity.syntax--other.syntax--attribute-name {
+  color: #33CED8;
+}
+.syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #5EC4FF;
+}
+.syntax--meta.syntax--class {
+  color: #33CED8;
+}
+.syntax--meta.syntax--link {
+  color: #70E1E8;
+}
+.syntax--meta.syntax--require {
+  color: #5EC4FF;
+}
+.syntax--meta.syntax--selector {
+  color: #B62D65;
+}
+.syntax--meta.syntax--separator {
+  background-color: #41505E;
+  color: #B7C5D3;
+}
+.syntax--none {
+  color: #B7C5D3;
+}
+.syntax--markup.syntax--bold {
+  color: #D98E48;
+  font-weight: bold;
+}
+.syntax--markup.syntax--changed {
+  color: #B62D65;
+}
+.syntax--markup.syntax--deleted {
+  color: #D95468;
+}
+.syntax--markup.syntax--italic {
+  color: #B62D65;
+  font-style: italic;
+}
+.syntax--markup.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+  color: #5EC4FF;
+}
+.syntax--markup.syntax--inserted {
+  color: #8BD49C;
+}
+.syntax--markup.syntax--list {
+  color: #D95468;
+}
+.syntax--markup.syntax--quote {
+  color: #D98E48;
+}
+.syntax--markup.syntax--raw.syntax--inline {
+  color: #8BD49C;
+}
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+}
+.syntax--source.syntax--gfm .syntax--markup.syntax--heading {
+  color: #8BD49C;
+}
+pre.editor-colors[mini] .scroll-view {
+  padding-left: 1px;
+}
+.syntax--html.syntax--string.syntax--quoted {
+  color: #68A1F0;
+}
+.syntax--html.syntax--string.syntax--quoted .syntax--begin,
+.syntax--html.syntax--string.syntax--quoted .syntax--end {
+  color: #68A1F0;
+}
+.syntax--html .syntax--punctuation {
+  color: #718CA1;
+}
+.syntax--html .syntax--comment .syntax--punctuation {
+  color: #41505E;
+}
+.syntax--html .syntax--entity.syntax--other.syntax--attribute-name.syntax--id {
+  color: #33CED8;
+}
+.syntax--entity.syntax--name.syntax--tag.syntax--mustache {
+  color: #b62d65;
+}
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end.syntax--html {
+  color: #68A1F0 !important;
+}
+.syntax--scss .syntax--null,
+.syntax--css .syntax--null,
+.syntax--less .syntax--null {
+  color: #B7C5D3 !important;
+}
+.syntax--scss .syntax--keyword,
+.syntax--css .syntax--keyword,
+.syntax--less .syntax--keyword,
+.syntax--scss .syntax--control,
+.syntax--css .syntax--control,
+.syntax--less .syntax--control {
+  color: #008B94;
+}
+.syntax--scss .syntax--string,
+.syntax--css .syntax--string,
+.syntax--less .syntax--string {
+  color: #33CED8;
+}
+.syntax--scss .syntax--string .syntax--punctuation,
+.syntax--css .syntax--string .syntax--punctuation,
+.syntax--less .syntax--string .syntax--punctuation {
+  color: #33CED8;
+}
+.syntax--scss .syntax--variable,
+.syntax--css .syntax--variable,
+.syntax--less .syntax--variable {
+  color: #EBBF83;
+}
+.syntax--scss .syntax--variable .syntax--punctuation,
+.syntax--css .syntax--variable .syntax--punctuation,
+.syntax--less .syntax--variable .syntax--punctuation {
+  color: #EBBF83;
+}
+.syntax--scss .syntax--punctuation.syntax--section.syntax--function,
+.syntax--css .syntax--punctuation.syntax--section.syntax--function,
+.syntax--less .syntax--punctuation.syntax--section.syntax--function {
+  color: #41505E;
+}
+.syntax--scss .syntax--other.syntax--color.syntax--hex.syntax--css,
+.syntax--css .syntax--other.syntax--color.syntax--hex.syntax--css,
+.syntax--less .syntax--other.syntax--color.syntax--hex.syntax--css {
+  color: #E27E8D;
+}
+.syntax--scss .syntax--other.syntax--color.syntax--hex.syntax--css .syntax--punctuation,
+.syntax--css .syntax--other.syntax--color.syntax--hex.syntax--css .syntax--punctuation,
+.syntax--less .syntax--other.syntax--color.syntax--hex.syntax--css .syntax--punctuation {
+  color: #D95468;
+}
+.syntax--scss.syntax--id,
+.syntax--css.syntax--id,
+.syntax--less.syntax--id,
+.syntax--scss.syntax--class,
+.syntax--css.syntax--class,
+.syntax--less.syntax--class,
+.syntax--scss.syntax--custom,
+.syntax--css.syntax--custom,
+.syntax--less.syntax--custom,
+.syntax--scss.syntax--tag,
+.syntax--css.syntax--tag,
+.syntax--less.syntax--tag {
+  color: #68A1F0 !important;
+}
+.syntax--scss.syntax--id .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--css.syntax--id .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--less.syntax--id .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--scss.syntax--class .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--css.syntax--class .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--less.syntax--class .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--scss.syntax--custom .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--css.syntax--custom .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--less.syntax--custom .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--scss.syntax--tag .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--css.syntax--tag .syntax--punctuation.syntax--definition.syntax--entity,
+.syntax--less.syntax--tag .syntax--punctuation.syntax--definition.syntax--entity {
+  color: #68A1F0;
+}
+.syntax--scss .syntax--entity,
+.syntax--css .syntax--entity,
+.syntax--less .syntax--entity {
+  color: #5EC4FF;
+}
+.syntax--scss .syntax--entity .syntax--punctuation,
+.syntax--css .syntax--entity .syntax--punctuation,
+.syntax--less .syntax--entity .syntax--punctuation {
+  color: #5EC4FF;
+}
+.syntax--scss .syntax--pseudo-class,
+.syntax--css .syntax--pseudo-class,
+.syntax--less .syntax--pseudo-class,
+.syntax--scss .syntax--pseudo-element,
+.syntax--css .syntax--pseudo-element,
+.syntax--less .syntax--pseudo-element {
+  color: #5EC4FF !important;
+}
+.syntax--scss .syntax--support.syntax--type.syntax--property-name,
+.syntax--css .syntax--support.syntax--type.syntax--property-name,
+.syntax--less .syntax--support.syntax--type.syntax--property-name {
+  color: #B7C5D3 !important;
+}
+.syntax--scss .syntax--support,
+.syntax--css .syntax--support,
+.syntax--less .syntax--support {
+  color: #718CA1 !important;
+}
+.syntax--scss .syntax--meta.syntax--property-name.syntax--scss,
+.syntax--css .syntax--meta.syntax--property-name.syntax--scss,
+.syntax--less .syntax--meta.syntax--property-name.syntax--scss {
+  color: #718CA1;
+}
+.syntax--scss .syntax--important,
+.syntax--css .syntax--important,
+.syntax--less .syntax--important {
+  color: #B62D65;
+}
+.syntax--scss .syntax--keyword.syntax--other.syntax--unit,
+.syntax--css .syntax--keyword.syntax--other.syntax--unit,
+.syntax--less .syntax--keyword.syntax--other.syntax--unit {
+  color: #D95468;
+}
+.syntax--source.syntax--js {
+  color: #718CA1;
+}
+.syntax--source.syntax--js .syntax--punctuation.syntax--definition.syntax--parameters {
+  color: #718CA1 !important;
+}
+.syntax--source.syntax--js .syntax--variable.syntax--language {
+  color: #718CA1;
+}
+.syntax--source.syntax--js .syntax--constant {
+  color: #8BD49C;
+}
+.syntax--source.syntax--js .syntax--constant.syntax--numeric {
+  color: #E27E8D;
+}
+.syntax--source.syntax--js .syntax--constant.syntax--boolean {
+  color: #E27E8D;
+}
+.syntax--source.syntax--js .syntax--constant.syntax--language {
+  color: #E27E8D;
+}
+.syntax--source.syntax--js .syntax--instance {
+  color: #EBBF83;
+}
+.syntax--source.syntax--jsx {
+  color: #B7C5D3;
+}
+.syntax--source.syntax--jsx .syntax--punctuation.syntax--definition.syntax--parameters {
+  color: #718CA1 !important;
+}
+.syntax--source.syntax--jsx .syntax--variable {
+  color: #B7C5D3;
+}
+.syntax--source.syntax--jsx .syntax--variable.syntax--parameter {
+  color: #EBBF83;
+}
+.syntax--source.syntax--jsx .syntax--entity.syntax--name.syntax--type.syntax--class {
+  color: #D98E48;
+}
+.syntax--json {
+  color: #718CA1;
+}
+.syntax--json.syntax--string,
+.syntax--json .syntax--punctuation.syntax--definition.syntax--array {
+  color: #718CA1 !important;
+}
+.syntax--json.syntax--constant.syntax--numeric {
+  color: #E27E8D;
+}
+.syntax--json.syntax--value .syntax--string.syntax--quoted.syntax--double {
+  color: #B7C5D3 !important;
+}
+.syntax--php.syntax--string.syntax--quoted {
+  color: #718CA1;
+}
+.syntax--php.syntax--string.syntax--quoted .syntax--begin,
+.syntax--php.syntax--string.syntax--quoted .syntax--end {
+  color: #718CA1;
+}
+.syntax--php .syntax--variable {
+  color: #EBBF83;
+}
+.syntax--php .syntax--variable .syntax--punctuation {
+  color: #EBBF83 !important;
+}
+.syntax--php .syntax--support.syntax--function.syntax--construct.syntax--output {
+  color: #008B94;
+}
+.syntax--php .syntax--support.syntax--function {
+  color: #008B94;
+}
+.syntax--php .syntax--keyword {
+  color: #5EC4FF;
+}
+.syntax--php .syntax--entity.syntax--name.syntax--function {
+  color: #8BD49C;
+}
+.syntax--php .syntax--parameters {
+  color: #D98E48;
+}
+.syntax--php.syntax--punctuation.syntax--section.syntax--embedded.syntax--begin,
+.syntax--php.syntax--punctuation.syntax--section.syntax--embedded.syntax--end {
+  color: #B62D65 !important;
+}
+.syntax--punctuation.syntax--definition.syntax--string.syntax--begin.syntax--php,
+.syntax--punctuation.syntax--definition.syntax--string.syntax--end.syntax--php {
+  color: #718CA1 !important;
+}
+.syntax--python {
+  color: #718CA1;
+}
+.syntax--python.syntax--comment {
+  color: #41505E !important;
+}
+.syntax--python .syntax--keyword.syntax--other {
+  color: #5EC4FF;
+}
+.syntax--python .syntax--storage {
+  color: #B62D65;
+}
+.syntax--python .syntax--string {
+  color: #B7C5D3;
+}
+.syntax--python .syntax--string .syntax--punctuation {
+  color: #B7C5D3;
+}
+.syntax--python .syntax--support.syntax--function.syntax--builtin {
+  color: #008B94;
+}
+.syntax--python .syntax--constant.syntax--character.syntax--escape {
+  color: #E27E8D;
+}
+.syntax--python .syntax--function-call {
+  color: #70E1E8;
+}
+.syntax--yaml.syntax--entity.syntax--name.syntax--tag {
+  color: #718CA1;
+}
+.syntax--yaml.syntax--string {
+  color: #B7C5D3;
+}
+.syntax--yaml.syntax--punctuation {
+  color: #718CA1 !important;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1>Anotações - Análise de Algoritmos</h1>
+<h2>Aula 1 - Introdução</h2>
+<p><strong>Cormen 1.1, 1.2, 2.1, 2.2</strong>.</p>
+<h3>Insertion Sort</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;for&nbsp;j&nbsp;&lt;-&nbsp;2&nbsp;to&nbsp;length[A]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;key&nbsp;&lt;-&nbsp;A[j]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;Insert&nbsp;A[j]&nbsp;into&nbsp;the&nbsp;sorted&nbsp;sequence&nbsp;A[1...j-1]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&lt;-&nbsp;j&nbsp;-&nbsp;1</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;i&nbsp;&gt;&nbsp;0&nbsp;and&nbsp;A[i]&nbsp;&gt;&nbsp;key</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do&nbsp;A[i+1]&nbsp;&lt;-&nbsp;A[i]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&lt;-&nbsp;i&nbsp;-&nbsp;1</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A[i+1]&nbsp;&lt;-&nbsp;key</span></span></span>
+</div></pre>
+<ul>
+<li>Ordenação in-place</li>
+<li>Invariante de laço: no início de cada iteração do laço for, o subvetor A[1…j-1] consiste dos elemtnos originalmente em A[i…j-1] mas em sequência ordenada.</li>
+</ul>
+<h3>Invariantes</h3>
+<ul>
+<li><strong>Inicialização</strong>: a invariante é verdadeira antes da primeira iteração do laço;</li>
+<li><strong>Manutenção</strong>: se a invariante é verdadeira antes de uma iteração do laço, ela se mantém verdadeira antes da próxima iteração;</li>
+<li><strong>Término</strong>: Quando o laço termina, a invariante nos oferece uma propriedade útil para mostrar que o algoritmo é correto.</li>
+</ul>
+<h3>Análise</h3>
+<ul>
+<li><strong>Tamanho da entrada</strong>: O tamanho da entrada depende do problema a ser estudado. Em alguns problemas, pode ser o número de itens da entrada (e.g. a quantidade de números num vetor), mas eventualmente pode ser o número total de bits necessários para representar a entrada, ou então o número de vértices e de arestas em um grafo, etc.</li>
+<li><strong>Tempo de execução</strong>: o tempo de execução de uma entrada particular é o número de operações primitivas (ou “passos”) executadas. É conveniente definir a noção de passo de forma que seja independente da máquina: Uma quantidade constante de tempo é necessária para executar cada linha do pseudocódigo; uma linha pode tomar uma quantidade de tempo diferente do que outra, mas assumiremos que cada execução da linha i tomará <span class="math"><script type="math/tex">c_i</script></span> tempo, onde <span class="math"><script type="math/tex">c_i</script></span> é constante.</li>
+<li><strong>Ordem de crescimento</strong>: Usar apenas o termo de maior ordem, já que, para uma entrada grande, os termos de ordem menor são relativamente significantes. Também ignoramos a constante que multiplica o termo de maior odem, já que fatores constantes são menos significantes do que a ordem de crescimento ao determinar a eficiência para entradas grandes.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Custo</th>
+<th># de vezes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">c_1</script></span></td>
+<td>n</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">c_2</script></span></td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">c_4</script></span></td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>5*</td>
+<td><span class="math"><script type="math/tex">c_5</script></span></td>
+<td><span class="math"><script type="math/tex">\sum{j=2}^{n} t_j</script></span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math"><script type="math/tex">c_6</script></span></td>
+<td><span class="math"><script type="math/tex">\sum{j=2}^{n} (t_j - 1)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">c_7</script></span></td>
+<td><span class="math"><script type="math/tex">\sum{j=2}^{n} (t_j - 1)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">c_8</script></span></td>
+<td>n - 1</td>
+</tr>
+</tbody>
+</table>
+<p>(* ) Note que no while, temos uma atribuição a mais do que o número de iterações, para que a condição deixe de ser satisfeita e não entre mais no laço.</p>
+<p>O tempo de execução do algoritmo é a soma do número de execução para cada linha do código; uma linha que toma <span class="math"><script type="math/tex">c_i</script></span> passos e é executada n vezes irá contribuir <span class="math"><script type="math/tex">c_in</script></span> para o tempo de execução total. Denotamos o tempo de execução por T(n).</p>
+<span class="math"><script type="math/tex; mode=display">T(n) = c_1n + c_2(n - 1) + c_4(n - 1) + c_5\sum_{j=2}^{n} t_j + c_6\sum_{j=2}^{n} (t_j - 1) + c_7\sum_{j=2}^{n} (t_j - 1) + c_8(n-1)
+</script></span>
+<h3>O grande</h3>
+<p>Sejam <span class="math"><script type="math/tex">T(n)</script></span> e <span class="math"><script type="math/tex">f(n)</script></span> funções dos inteiros nos reais. Dizemos que <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">O(f(n))</script></span> se existem constantes positivas <span class="math"><script type="math/tex">c</script></span> e <span class="math"><script type="math/tex">n_0</script></span> tais que <span class="math"><script type="math/tex">T(n) \leq cf(n) \forall n \geq n_0</script></span>. Dizemos, então, que temos um <strong>limitante superior assintótico</strong>: trata-se do limitante no pior caso.</p>
+<h4>Exemplos</h4>
+<ol>
+<li>
+<p><span class="math"><script type="math/tex">10n^2</script></span> é <span class="math"><script type="math/tex">O(n^3)</script></span>.
+Provamos pela definição:
+Seja <span class="math"><script type="math/tex">n \geq 0</script></span>. Então <span class="math"><script type="math/tex">0 \leq 10n^2 \leq 10n^3</script></span>.
+Alternativamente, seja <span class="math"><script type="math/tex">n \geq 10</script></span>. Então <span class="math"><script type="math/tex">0 \leq 10n^2 \leq n \times n^2 = 1n^3</script></span>.</p>
+</li>
+<li>
+<p><span class="math"><script type="math/tex">20n^3 + 10n \log n + 5</script></span> é <span class="math"><script type="math/tex">O(n^3)</script></span>
+Seja <span class="math"><script type="math/tex">n \geq 1</script></span>. Então <span class="math"><script type="math/tex">20n^3 + 10n \log n + 5 \leq 20 n^3 + 10 n^3 + 5 n^3 = 35 n^3</script></span>.</p>
+</li>
+</ol>
+<h4>Uso da notação</h4>
+<p><span class="math"><script type="math/tex">O(f(n))</script></span> é um conjunto! <span class="math"><script type="math/tex">O(f(n)) = \{T(n) : \exists c \land n_0</script></span> t.q. <span class="math"><script type="math/tex">T(n) \leq cf(n) \forall n \geq n_0\}</script></span>.</p>
+<p>Logo, &quot;<span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">O(f(n))</script></span>&quot; deve ser entendido como <span class="math"><script type="math/tex">T(n)</script></span> \in <span class="math"><script type="math/tex">O(f(n))</script></span>&quot;.</p>
+<ul>
+<li><span class="math"><script type="math/tex">T(n) \leq O(f(n))</script></span> é feio.</li>
+<li><span class="math"><script type="math/tex">T(n) \geq O(f(n))</script></span> não faz sentido.</li>
+<li>&quot;<span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">g(n) + O(f(n))</script></span>&quot; significa que existem <span class="math"><script type="math/tex">c</script></span> e <span class="math"><script type="math/tex">n_0</script></span> positivas tais que <span class="math"><script type="math/tex">T(n)</script></span> \leq <span class="math"><script type="math/tex">g(n) + c f(n)</script></span> para todo <span class="math"><script type="math/tex">n \geq n_0</script></span>.</li>
+</ul>
+<hr>
+<h2>Aula 2 – Introdução parte 2</h2>
+<p><strong>Cormen 3.1 e 3.2</strong></p>
+<h3>Notação Omega</h3>
+<p>Dizemos que <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Omega(f(n))</script></span> se existem constantes positivas <span class="math"><script type="math/tex">c</script></span> e <span class="math"><script type="math/tex">n_0</script></span> tais que <span class="math"><script type="math/tex">cf(n) \leq T(n) \forall n \geq n_0</script></span>.</p>
+<p>Ou seja, temos um <strong>limitante inferior assintótico</strong>: trata-se do desempenho no melhor caso.</p>
+<h4>Exemplos</h4>
+<ol>
+<li>
+<p>Se <span class="math"><script type="math/tex">T(n) \geq 0.001n^2 \forall n \geq 8</script></span>, então <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Omega(n^2)</script></span>.
+Prova: Aplique a definição com <span class="math"><script type="math/tex">c = 0.001</script></span> e <span class="math"><script type="math/tex">n_0 = 8</script></span>.</p>
+</li>
+<li>
+<p>O consumo de tempo da ordenação por inserção é <span class="math"><script type="math/tex">\Omega(n)</script></span>.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th># mínimo de vezes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>n</td>
+</tr>
+<tr>
+<td>2</td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>n - 1</td>
+</tr>
+<tr>
+<td>5*</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>n - 1</td>
+</tr>
+</tbody>
+</table>
+<p>Total: <span class="math"><script type="math/tex">\geq 4n - 3 = \Omega(n)</script></span>.</p>
+<h3>Notação Theta</h3>
+<p>Sejam <span class="math"><script type="math/tex">T(n)</script></span> e <span class="math"><script type="math/tex">f(n)</script></span> funções dos inteiros nos reais. Dizemos que <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(f(n))</script></span> se <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">O(f(n))</script></span> e <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Omega(f(n)).</script></span>.</p>
+<p>Alternativamente, dizemos que <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(f(n))</script></span> se existem constantes positivas <span class="math"><script type="math/tex">c_1</script></span>, <span class="math"><script type="math/tex">c_2</script></span>, e <span class="math"><script type="math/tex">n_0</script></span> tais que <span class="math"><script type="math/tex">0 \leq c_1f(n) \leq T(n) \leq c_2 f(n)</script></span>. Neste caso, dizemos que f(n) é um <strong>limite assintoticamente estreito</strong> para T(n).</p>
+<h3>Comparação assintótica</h3>
+<ul>
+<li>Assintoticamente = no limite.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>comparação</th>
+<th>comparação assintótica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math"><script type="math/tex">T(n) \leq f(n)</script></span></td>
+<td><span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">O(f(n))</script></span></td>
+</tr>
+<tr>
+<td><span class="math"><script type="math/tex">T(n) \geq g(n)</script></span></td>
+<td><span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Omega(f(n))</script></span></td>
+</tr>
+<tr>
+<td><span class="math"><script type="math/tex">T(n) = f(n)</script></span></td>
+<td><span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(f(n))</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Do ponto de vista da análise de algoritmos, eficiente = polinomial.</p>
+<h2>Análise do caso médio</h2>
+<p>Consideremos que a entrada do algoritmo é uma permutação de 1 a n escolhida com probabilidade uniforme. Qual o valor esperado do número de execuções de cada linha?</p>
+<p>Seja <span class="math"><script type="math/tex">n\geq 1, j\in [n], t\in [j]</script></span>. Queremos provar que o número de permutações de <span class="math"><script type="math/tex">A[1...n]</script></span> de <span class="math"><script type="math/tex">1</script></span> a <span class="math"><script type="math/tex">n</script></span> com essa propriedade é <span class="math"><script type="math/tex">n!</script></span>.
+Hipótese: <span class="math"><script type="math/tex">A[i...j]</script></span> tem <span class="math"><script type="math/tex">t-1</script></span> elementos maiores que <span class="math"><script type="math/tex">A[j]</script></span>.</p>
+<p>Para construir qualquer permutação desse tipo, podemos:</p>
+<ol>
+<li>Escolher <span class="math"><script type="math/tex">S \subseteq [n]</script></span> de tamnho <span class="math"><script type="math/tex">j</script></span> para formar <span class="math"><script type="math/tex">A[1...j]</script></span> “sem ordem.” <span class="math"><script type="math/tex">\rightarrow {n \choose j}</script></span>.</li>
+<li>Ordenar <span class="math"><script type="math/tex">S</script></span> num vetor <span class="math"><script type="math/tex">B[1...j]</script></span> e tome <span class="math"><script type="math/tex">A[j] := B[j - t + 1] = k</script></span>. <span class="math"><script type="math/tex">\rightarrow 1</script></span>.</li>
+<li>Permutar <span class="math"><script type="math/tex">S\setminus{k}</script></span> com <span class="math"><script type="math/tex">A[1...j-1]</script></span>. <span class="math"><script type="math/tex">\rightarrow (j-1)!</script></span>.</li>
+<li>Permutar <span class="math"><script type="math/tex">[n]\setminus S</script></span> em <span class="math"><script type="math/tex">A[j+1...n]</script></span>. <span class="math"><script type="math/tex">\rightarrow (n-j)!</script></span>.</li>
+</ol>
+<hr>
+<h2>Aula 3 – Mergesort e recorrências</h2>
+<p><strong>Cormen 2.3, 4.1, 4.2</strong></p>
+<h3>Divisão e conquista</h3>
+<ol>
+<li><strong>Divisão</strong>: dividir a instância do problema em instâncias menores do problema;</li>
+<li><strong>Conquista</strong>: resolver o problema nas instâncias menores recursivamente;</li>
+<li><strong>Combinação</strong>: combinar as soluções das instâncias menores para gerar uma solução da instância original.</li>
+</ol>
+<p>Exemplo: Mergesort</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>mergesort(A,&nbsp;p,&nbsp;r):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;se&nbsp;p&nbsp;&lt;&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;então&nbsp;q&nbsp;&lt;-&nbsp;piso((p+r)/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergesort(A,&nbsp;p,&nbsp;q)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mergesort(A,&nbsp;q+1,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intercala(A,&nbsp;p,&nbsp;q,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>intercala(A,&nbsp;p,&nbsp;q,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>0.&nbsp;#B[p...r]&nbsp;é&nbsp;um&nbsp;vetor&nbsp;auxiliar</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;para&nbsp;i&nbsp;&lt;-&nbsp;p&nbsp;até&nbsp;q&nbsp;faça</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B[i]&nbsp;&lt;-&nbsp;A[i]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;para&nbsp;j&nbsp;&lt;-&nbsp;q&nbsp;+&nbsp;1&nbsp;até&nbsp;r&nbsp;faça</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B[r&nbsp;+&nbsp;q&nbsp;+&nbsp;1&nbsp;-&nbsp;j]&nbsp;&lt;-&nbsp;A[j]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;i&nbsp;&lt;-&nbsp;p</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;j&nbsp;&lt;-&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;para&nbsp;k&nbsp;&lt;-&nbsp;p&nbsp;até&nbsp;r&nbsp;faça</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;i&nbsp;&lt;=&nbsp;q&nbsp;e&nbsp;B[i]&nbsp;&lt;=&nbsp;B[j]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A[k]&nbsp;&lt;-&nbsp;B[i];</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i&nbsp;&lt;-&nbsp;i&nbsp;+&nbsp;1;</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>11.&nbsp;&nbsp;&nbsp;&nbsp;senão</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>12.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A[k]&nbsp;&lt;-&nbsp;B[j];&nbsp;j&nbsp;&lt;-&nbsp;j&nbsp;-&nbsp;1;</span></span></span>
+</div></pre>
+<p>Note que a cópia da segunda metade invertida em intercala evita o uso de um sentinela.</p>
+<h4>Consumo de tempo</h4>
+<p>Quanto tempo consome <em>intercala</em> em função de <span class="math"><script type="math/tex">n := r - p + 1</script></span>?</p>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo de todas as execuções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>5-6</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>9-12</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Total: <span class="math"><script type="math/tex">\Theta(7n+1) = \Theta(n)</script></span>.</p>
+<p>E <em>mergesort</em>?</p>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo máximo na linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">T(\lfloor n/2\rfloor)</script></span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math"><script type="math/tex">T(n) = T(\lceil n/2\rceil) + T(\lfloor n/2\rfloor) + \Theta(n)</script></span>.</p>
+<h3>Resolvendo recorrências</h3>
+<h4>Receita</h4>
+<ol>
+<li>Substitua a notação assintótica por função da classe. (Ex.: <span class="math"><script type="math/tex">\Theta(1)</script></span> vira 1).</li>
+<li>Restrinja-se a <span class="math"><script type="math/tex">n</script></span> potência de 2 (para facilitar contas).</li>
+<li>Estipule que na base o valor é 1.</li>
+<li>Use expansão ou árvore de recorrência para determinar um chute de solução.</li>
+<li>Confira se o chute está correto.</li>
+</ol>
+<h4>Exemplo</h4>
+<p>Para n potência de 2 e <span class="math"><script type="math/tex">k = \lg n</script></span> temos que:</p>
+<p><span class="math"><script type="math/tex">T(n) = 2T(n/2) + n</script></span></p>
+<p><span class="math"><script type="math/tex">= 2(2T(n/2^2) + n/2) + n = 2^2T(n/2^2) + 2n</script></span></p>
+<p><span class="math"><script type="math/tex">= 2^2(2T(n/2^3) + n/2^2) + 2n = 2^3T(n/2^3) + 3n</script></span></p>
+<p><span class="math"><script type="math/tex">\ldots = 2^kT(n/2^k) + kn</script></span></p>
+<p><span class="math"><script type="math/tex">= n + n\lg n = \Theta(n\lg n)</script></span>.</p>
+<h4>Conferência</h4>
+<p>Para n potência de 2 e <span class="math"><script type="math/tex">k = \lg n</script></span>, <span class="math"><script type="math/tex">T(n) = 2T(n/2) + n</script></span> (e, deixamos implícito, <span class="math"><script type="math/tex">T(1) = 1</script></span>).</p>
+<p><strong>Afirmação</strong>: <span class="math"><script type="math/tex">T(n) = n + n\lg n</script></span>.</p>
+<p>Prova por indução em k, onde <span class="math"><script type="math/tex">k = \lg n</script></span>.</p>
+<p>Afirmação reescrita em termos de <span class="math"><script type="math/tex">k</script></span>: <span class="math"><script type="math/tex">T(2^k) = 2^k + k2^k</script></span>.</p>
+<p>Para <span class="math"><script type="math/tex">k = 0</script></span>, temos que <span class="math"><script type="math/tex">T(2^0) = T(1) = 1 = 2^0 + 0.2^0</script></span>.</p>
+<p>Para <span class="math"><script type="math/tex">k \geq 1</script></span>, suponha que <span class="math"><script type="math/tex">T(2^{k-1} = 2^{k-1} + (k-1)2^{k-1})</script></span>.</p>
+<p>Então, <span class="math"><script type="math/tex">T(2^k) = 2T(2^{k-1}) + 2^k</script></span> pela recorrência.</p>
+<p>Logo, <span class="math"><script type="math/tex">T(2^k) = 2(2^{k-1} + (k-1)2^{k-1}) + 2^k = 2^k + (k-1)2^k + 2^k = 2^k + k2^k</script></span>.</p>
+<h4>Mais exemplos</h4>
+<p><strong><span class="math"><script type="math/tex">T(n) = T(\lfloor n/2 \rfloor) + \Theta(1)</script></span>.</strong></p>
+<p>Exemplo de código que tem esse consumo de tempo: busca binária.</p>
+<p>Versão simplicada da recorrência acima:
+<span class="math"><script type="math/tex">T(1) = 1</script></span> e <span class="math"><script type="math/tex">T(n) = T(n/2) + 1</script></span> para <span class="math"><script type="math/tex">n \geq 2</script></span> potência de 2.</p>
+<p>Por expansão:</p>
+<p><span class="math"><script type="math/tex">T(n) = T(n/2) + 1 = T(n/2^2 + 1) + 1 = T(n/2^2) + 2</script></span></p>
+<p><span class="math"><script type="math/tex">= \ldots = T(n/2^k) + k</script></span> para <span class="math"><script type="math/tex">k = \lg n</script></span></p>
+<p><span class="math"><script type="math/tex">= T(1) + \lg n = 1 + \lg n = \Theta(\lg n)</script></span>.</p>
+<hr>
+<p><strong><span class="math"><script type="math/tex">T(n) = T(n-1) + \Theta(n)</script></span></strong></p>
+<p>Exemplo de código que tem esse consumo de tempo: ordenação por seleção.</p>
+<p>Versão simplicada da recorrência acima:
+<span class="math"><script type="math/tex">T(1) = 1</script></span> e <span class="math"><script type="math/tex">T(n) = T(n-1) + n</script></span> para <span class="math"><script type="math/tex">n \geq 2</script></span>.</p>
+<p>Por expansão:</p>
+<p><span class="math"><script type="math/tex">T(n) = T(n-1) + n = T(n-2) + (n-1) + n</script></span></p>
+<p><span class="math"><script type="math/tex">= \ldots = T(1) + 2 + 3 + \ldots + (n - 1) + n</script></span></p>
+<p><span class="math"><script type="math/tex">= 1 + 2 + \ldots + (n-1) + n = \frac{(n+1)n}{2} = \Theta(n^2)</script></span>.</p>
+<p>Note que não temos restrição no <span class="math"><script type="math/tex">n</script></span> neste caso.</p>
+<p><strong>Só faça a conta quando os termos que saem da recorrência são o mesmo (como o <span class="math"><script type="math/tex">n</script></span> na recorrência do mergesort e o 1 na anterior).</strong></p>
+<hr>
+<h2>Aula 4 – Quicksort</h2>
+<p><strong>Cormen 7.1 e 7.2</strong></p>
+<p>O quicksort também aplica o paradigma da divisão e conquista.</p>
+<ol>
+<li><strong>Divisão</strong>: particiona o vetor A[p…r] entre dois subvetores (possivelmente vazios) A[p…q-1] e A[q+1…r] tais que todos os elementos em A[p…q-1] sejam menores ou iguais a A[q] e em A[q+1…r] sejam maiores ou iguais a A[q].</li>
+<li><strong>Conquista</strong>: ordena os dois subvetores por meio de chamadas recursivas.</li>
+<li><strong>Combinação</strong>: como os subvetores já estão ordenados, o vetor está ordenado.</li>
+</ol>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>quicksort(A,&nbsp;p,&nbsp;r):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;if&nbsp;p&nbsp;&lt;&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;particione(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quicksort(A,&nbsp;p,&nbsp;q-1)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quicksort(A,&nbsp;q+1,&nbsp;r)</span></span></span>
+</div></pre>
+<h3>Partição</h3>
+<p>O problema da partição consiste em rearranjar um dado vetor A[p…r] tal que <span class="math"><script type="math/tex">p \leq q \leq r</script></span> e <span class="math"><script type="math/tex">A[p...q-1] \leq A[q] \leq A[q+1...r]</script></span>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>particione(A,&nbsp;p,&nbsp;r):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;x&nbsp;=&nbsp;A[r]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;i&nbsp;=&nbsp;p&nbsp;-&nbsp;1</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;for&nbsp;j&nbsp;=&nbsp;p&nbsp;to&nbsp;r-1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;A[j]&nbsp;&lt;=&nbsp;x</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i++</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(A[i],&nbsp;A[j])</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;swap(A[i&nbsp;+&nbsp;1],&nbsp;A[r])</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;return&nbsp;i&nbsp;+&nbsp;1</span></span></span>
+</div></pre>
+<h4>Invariantes</h4>
+<p>No começo de cada iteração de 3-6, temos:</p>
+<ul>
+<li><span class="math"><script type="math/tex">A[p..i] \leq x</script></span></li>
+<li><span class="math"><script type="math/tex">A[i+1... j-1] > x</script></span></li>
+<li><span class="math"><script type="math/tex">A[r] = x</script></span></li>
+</ul>
+<ol>
+<li><strong>Inicialização</strong>: antes da primeira iteração, i = p - 1 e j = p. Como não há valores entre p e i e nem entre i + 1 e j - 1, as duas primeiras invariantes são trivialmente satisfeitas. A atribuição da linha 1 satisfaz a terceira condição.</li>
+<li><strong>Manutenção</strong>: Temos dois casos, a depender do teste da linha 4. Quando A[j] &gt; x, incrementa-se j. A condição 2 passa a ser satisfeita para A[j-1], e as outras entradas permanecem inalteradas. Quando A[j] &lt;= x, incrementa-se i, A[i] e A[j] são trocados e incrementa-se j. Por conta da troca, A[i] &lt;= x e a condição 1 é satisfeita. De forma similar, A[j-1] &gt; x já que o item que foi colocado em A[j-1] é, por conta da invariante, maior que x.</li>
+<li><strong>Término</strong>: Quando o programa termina, j = r. Assim, toda entrada no vetor está em um dos três conjuntos descritos pelas invariantes e a partição obteve sucesso.</li>
+</ol>
+<h4>Consumo de tempo do particione</h4>
+<p>Em função de <span class="math"><script type="math/tex">n := r - p + 1</script></span>.</p>
+<p>O consumo de tempo do quicksort depende do balanceamento da partição, que por sua vez depende dos elementos usados para particionar.</p>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo de todas as execuções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td><span class="math"><script type="math/tex">2\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>5-6</td>
+<td><span class="math"><script type="math/tex">2O(n)</script></span></td>
+</tr>
+<tr>
+<td>7-8</td>
+<td><span class="math"><script type="math/tex">2\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">\Theta(2n + 4) + O(2n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Conclusão: o algoritmo <strong>particione</strong> consome tempo <span class="math"><script type="math/tex">\Theta(n)</script></span>.</p>
+<h3>Consumo de tempo do quicksort</h3>
+<p><span class="math"><script type="math/tex">T(n) :=</script></span> consumo de tempo no pior caso, sendo que <span class="math"><script type="math/tex">n := r - p + 1</script></span>.</p>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo de todas as execuções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">T(k)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">T(n - k - 1)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Sendo que <span class="math"><script type="math/tex">0 \leq k := q - p \leq n - 1</script></span>.</p>
+<h4>Pior caso</h4>
+<p><span class="math"><script type="math/tex">T(n) :=</script></span> consumo de tempo máximo quando <span class="math"><script type="math/tex">n = r - p + 1</script></span>.</p>
+<p>O comportamento do quicksort no pior caso ocorre quando o particionamento produz um subproblema com n - 1 elementos e outro com 0 elementos. O particionamento custa <span class="math"><script type="math/tex">\Theta(n)</script></span>, e como a chamada recursiva em vetores de 0 elementos apenas retorna, T(0) = \Theta(1). Assim, a recorrência de tempo será</p>
+<span class="math"><script type="math/tex; mode=display">T(n) = T(n - 1) + T(0) + \Theta(n) = T(n-1) + \Theta(n)
+</script></span>
+<p>Intuitivamente, somando o custo em cada nível, teremos uma progressão aritmética que será avaliada em <span class="math"><script type="math/tex">\Theta(n^2)</script></span>.</p>
+<ul>
+<li><strong>Recorrência cuidadosa</strong>: <span class="math"><script type="math/tex">T(n)  = max {T(k) + T(n-k-1)} + \Theta(n)</script></span>; <span class="math"><script type="math/tex">0 \leq k \leq n-1</script></span>.
+<ul>
+<li><span class="math"><script type="math/tex">T(0) = 1</script></span></li>
+<li><span class="math"><script type="math/tex">T(1) = 1</script></span></li>
+<li>T(n) = max {T(k) + T(n-k-1)} + n$; <span class="math"><script type="math/tex">0 \leq k \leq n-1</script></span> para <span class="math"><script type="math/tex">n = 2, 3, 4 \ldots</script></span>.</li>
+</ul>
+</li>
+</ul>
+<p>Vamos mostrar que <span class="math"><script type="math/tex">T(n) \leq n^2 + 1</script></span> para <span class="math"><script type="math/tex">n \geq 0</script></span>.</p>
+<p>Prova: Trivial para <span class="math"><script type="math/tex">n \leq 1</script></span>. Se <span class="math"><script type="math/tex">n \geq 2</script></span>, então:</p>
+<span class="math"><script type="math/tex; mode=display">T(n) = max \{T(k) + T(n-k-1)\} + n \\
+(H.I.) \leq max \{k^2 + 1 + (n - k - 1)^2 + 1\} + n \\
+= n^2 - n + 3 \leq n^2 + 1.
+</script></span>
+<p>Algumas conclusões:</p>
+<ul>
+<li><span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(n^2)</script></span></li>
+<li>O consumo de tempo do quicksort no pior caso é <span class="math"><script type="math/tex">O(n^2)</script></span></li>
+<li>O consumo de tempo do quicksort é <span class="math"><script type="math/tex">O(n^2)</script></span>.</li>
+<li>O pior caso ocorre quando o vetor já está ordenado ou está em ordem reversa.</li>
+</ul>
+<h4>Melhor caso</h4>
+<p>Na melhor divisão possível, cada um dos subvetores tem tamanho <span class="math"><script type="math/tex">k \leq \frac{n}{2}</script></span>. Na verdade, um terá tamanho <span class="math"><script type="math/tex">\lfloor n/2 \rfloor</script></span> e outro <span class="math"><script type="math/tex">\lceil n/2 \rceil - 1</script></span>.</p>
+<p>Nesse caso, a recorrência será</p>
+<span class="math"><script type="math/tex; mode=display">T(n) = 2T(n/2) + \Theta(n) = \Theta(n\lg n),
+</script></span>
+<p>tolerando a remoção do piso, do teto e da subtração de 1. Alternativamente, tomamos <span class="math"><script type="math/tex">M(n) :=</script></span> consumo de tempo mínimo quando <span class="math"><script type="math/tex">n = r - p + 1</script></span>.</p>
+<span class="math"><script type="math/tex; mode=display">M(n) = min\{M(k) + M(n - k - 1)\} + \Theta(n); 0 \leq k \leq n-1
+</script></span>
+<p>A prova de que <span class="math"><script type="math/tex">M(n) \geq (n+1)\lg (n+1)</script></span> é análoga à prova anterior. Isso implica que no melhor caso o quicksort é <span class="math"><script type="math/tex">\Omega(n\lg n)</script></span></p>
+<p>Algumas conclusões:</p>
+<ul>
+<li><span class="math"><script type="math/tex">M(n)</script></span> é <span class="math"><script type="math/tex">\Theta(n\lg n)</script></span></li>
+<li>O consumo de tempo do quicksort no melhor caso é <span class="math"><script type="math/tex">\Omega(n \log n)</script></span></li>
+<li>O consumo de tempo do quicksort no melhor caso é <span class="math"><script type="math/tex">\Theta(n \log n)</script></span>.</li>
+</ul>
+<p>Note que, se o quicksort fizer uma boa partição a cada, digamos, 5 níveis da recursão, o efeito geral é o mesmo, assintoticamente, que ter feito uma boa partição em todos os níveis. Suponha, por exemplo, que tenhamos uma partição que divide numa razão de 9 para 1. Obteremos a recorrência <span class="math"><script type="math/tex">T(n) = T(9n/10) + T(n/10) + cn</script></span>. Note que cada nível terá custo <span class="math"><script type="math/tex">cn</script></span> aé que a recursão atinge uma parada no nível de profundidade <span class="math"><script type="math/tex">\log{10}n = \Omega(\lg n)</script></span>, obtendo um custo total de <span class="math"><script type="math/tex">O(n \lg n)</script></span>.</p>
+<hr>
+<h2>Aula 5 - Análise probabilística</h2>
+<p><strong>Cormen 5.1, 5.2, C.1 a C.3</strong></p>
+<p>Chamamos um algoritmo de <strong>aleatorizado</strong> se seu comportamento não é apenas determinado pela sua entrada mas também pelos valores produzidos por um gerador de números aleatórios. Distinguimos esses algoritmos daqueles cuja <em>entrada é aleatorizada</em> referindo-nos ao seu tempo de execução como <strong>tempo de execução esperado</strong>. No geral, discutimos o caso médio do tempo de execução quando a distribuição de probabilidade refere-se à entrada do algortimo, e discutimos o tempo esperado de execução quando o próprio algoritmo faz escolhas aleatorizadas.</p>
+<h3>Um pouco de probabilidade</h3>
+<ul>
+<li><span class="math"><script type="math/tex">(S, Pr)</script></span> espaço de probabilidade.</li>
+<li><span class="math"><script type="math/tex">S =</script></span> conjunto finito (eventos elementares).</li>
+<li><span class="math"><script type="math/tex">Pr\{\} =</script></span> função distribuição de probabilidades, de <span class="math"><script type="math/tex">S</script></span> em <span class="math"><script type="math/tex">[0, 1]</script></span> tal que:
+<ul>
+<li><span class="math"><script type="math/tex">Pr\{s\} \geq 0</script></span></li>
+<li><span class="math"><script type="math/tex">Pr\{s\} = 1</script></span>, onde <span class="math"><script type="math/tex">Pr\{U\}</script></span> é abreviação de <span class="math"><script type="math/tex">\sum_{u\in U} Pr\{u\}</script></span>.</li>
+</ul>
+</li>
+<li>Uma variável aleatória é uma função numérica definida sobre os eventos elementares.
+<ul>
+<li><span class="math"><script type="math/tex">X = k</script></span> é uma abreviação de <span class="math"><script type="math/tex">\{s\in S : X(s) = k\}</script></span></li>
+</ul>
+</li>
+<li>Esperança: <span class="math"><script type="math/tex">E[x] = \sum X(s) Pr\{s\}</script></span>.</li>
+</ul>
+<h3>Problema do máximo</h3>
+<p>Encontrar o elemento máximo de um vetor A[1…n] de números inteiros positivos distintos.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>MAX(A,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;max&nbsp;&lt;-&nbsp;0</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;n&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;A[i]&nbsp;&gt;&nbsp;max:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max&nbsp;&lt;-&nbsp;A[i]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;return&nbsp;max</span></span></span>
+</div></pre>
+<p>Quantas vezes a linha 4 é executada?</p>
+<p>Iremos supor que A[1…n] é uma permutação aleatória uniforme de 1, <span class="math"><script type="math/tex">\ldots</script></span>, n. Cada permutação tem probabilidade <span class="math"><script type="math/tex">\frac{1}{n!}</script></span>.</p>
+<ul>
+<li><span class="math"><script type="math/tex">X =</script></span> número total de execuções da linha 4 = <span class="math"><script type="math/tex">\sum X_i</script></span>.</li>
+<li><span class="math"><script type="math/tex">X_i = 1</script></span> se a linha 4 é executada; <span class="math"><script type="math/tex">X_i</script></span> é uma variável aleatória indicadora.</li>
+<li><span class="math"><script type="math/tex">E[X_i] =</script></span> probabilidade de que A[i] seja máximo em A[i…i] <span class="math"><script type="math/tex">= 1/i</script></span>.</li>
+</ul>
+<span class="math"><script type="math/tex; mode=display">E[x] = E[X_n + \ldots + X_n] = E[X_1] + \ldots E[X_n] \\
+= 1/1 + 1/2 + \ldots + 1/n < 1 + \ln n \\
+= \Theta(\lg n)
+</script></span>
+<h3>Análise de caso médio do Quicksort</h3>
+<p>Considere que A[1…n] é uma permutação escolhida uniformemente dentre todas as permutações de 1 a n. Seja X(A) o número de vezes que a linha 4 do <em>particione</em> é executada para uma chamada de quicksort. Observe que X é uma variável aleatória. Uma maneira de estimarmos o consumo de tempo médio do quicksort é calcularmos <span class="math"><script type="math/tex">E[X]</script></span>. Podemos escrever X como soma de variáveis aleatórias binárias, cuja esperança é mais fácil de calcular.</p>
+<p>Para <span class="math"><script type="math/tex">a</script></span> e <span class="math"><script type="math/tex">b</script></span> em <span class="math"><script type="math/tex">\{1, \ldots, n\}</script></span>, seja <span class="math"><script type="math/tex">X_{ab}</script></span> o número de comparações entre <span class="math"><script type="math/tex">a</script></span> e <span class="math"><script type="math/tex">b</script></span> na linha 4 de <em>particione</em>.</p>
+<span class="math"><script type="math/tex; mode=display">X = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} X_{ab}
+</script></span>
+<p>Supondo <span class="math"><script type="math/tex">a < b</script></span>, <span class="math"><script type="math/tex">X_{ab} = 1</script></span> se o primeiro pivô em <span class="math"><script type="math/tex">\{a, \ldots, b\}</script></span> é <span class="math"><script type="math/tex">a</script></span> ou <span class="math"><script type="math/tex">b</script></span>. Qual a probabilidade de <span class="math"><script type="math/tex">X_{ab}</script></span> valer 1?</p>
+<span class="math"><script type="math/tex; mode=display">E[X_{ab}] = Pr\{X_{ab} = 1\} = \frac{1}{b - a + 1} + \frac{1}{b - a + 1}
+</script></span>
+<span class="math"><script type="math/tex; mode=display">E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}] \\
+= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} Pr{X_{ab} = 1} \\
+= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{b - a + 1} \\
+= \sum{a = 1}^{n-1}\sum{k = 1}^{n-a} \frac{2}{k+1} \\
+< \sum{a = 1}^{n-1} 2(\frac{1}{1} + \frac{1}{2} + \ldots + \frac{1}{n}) \\
+< 2n(1+\ln n)
+</script></span>
+<p>Note que limitamos o somatório pela série harmônica</p>
+<p>Logo, o consumo de tempo esperado do quicksort, quando sua entrada é uma permutação de <span class="math"><script type="math/tex">1, \ldots, n</script></span> escolhida uniformemente é <span class="math"><script type="math/tex">O(n \log n)</script></span>.</p>
+<hr>
+<h2>Aulas 6 e 9 - Algoritmos aleatorizados, seleção</h2>
+<p><strong>Cormen 7.3, 7.4, 9.2</strong></p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>randomParticione(A,&nbsp;p,&nbsp;r):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;i&nbsp;&lt;-&nbsp;random(p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;swap(A[i],&nbsp;A[r])</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;return&nbsp;particione(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;</span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>randomQuicksort(A,&nbsp;p,&nbsp;r):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;if&nbsp;p&nbsp;&lt;&nbsp;r:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;&lt;-&nbsp;randomParticione(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomQuicksort(A,&nbsp;p,&nbsp;q-1)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;randomQuicksort(a,&nbsp;q+1,&nbsp;r)</span></span></span>
+</div></pre>
+<p>Para obter o consumo de tempo esperado, devemos contar o número esperado de comparações na linha 4 do particione. Ver aula anterior. O consumo de tempo esperado é <span class="math"><script type="math/tex">\Theta(n \log n)</script></span></p>
+<h3>Problema do k-ésimo menor elemento</h3>
+<p>Encontrar o k-ésimo menor elemento de A[1…n], supondo que o vetor não tem elementos repetidos.</p>
+<p>A mediana é o <span class="math"><script type="math/tex">\lfloor \frac{n+1}{2}\rfloor</script></span> ou o <span class="math"><script type="math/tex">\lceil\frac{n+1}{2}\rceil</script></span>-ésimo menor elemento.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>select-ord(A,&nbsp;n,&nbsp;k):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;ordene(A,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;return&nbsp;A[k]</span></span></span>
+</div></pre>
+<p>O consumo de tempo do <em>select-ord</em> é <span class="math"><script type="math/tex">\Theta(n \lg n)</script></span>. Conseguimos fazer melhor para o menor elemento (percorrendo o vetor e guardando o valor do menor, analogamente ao algoritmo <em>MAX</em>). Para o segundo, fazemos um algoritmo semelhante, guardando o valor dos dois menores, e assim por diante.</p>
+<p>Podemos usar o <em>particione</em> do quicksort para selecionar a mediana ou o k-ésimo menor elemento em tempo linear. Lembrando que o particione, visto na aula 4, consome tempo <span class="math"><script type="math/tex">\Theta(n)</script></span>.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>Select(A,&nbsp;p,&nbsp;r,&nbsp;k):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;if&nbsp;p&nbsp;==&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A[p]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;q&nbsp;&lt;=&nbsp;particione(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;if&nbsp;k&nbsp;=&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A[q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;else&nbsp;if&nbsp;k&nbsp;&lt;&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;select(A,&nbsp;p,&nbsp;q-1,&nbsp;k)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;else&nbsp;return&nbsp;select(A,&nbsp;q+1,&nbsp;r,&nbsp;k-(q&nbsp;-&nbsp;p&nbsp;+&nbsp;1))</span></span></span>
+</div></pre>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo de todas as execuções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>4-6</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">T(k-1)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">T(n - k)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">\Theta(n) + max{T(k-1), T(n-k)}</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Pior caso: <span class="math"><script type="math/tex">T(n) = \Theta(n) + T(n-1) = \Theta(n^2)</script></span>.</p>
+<h4>Solução aleatorizada</h4>
+<p>Podemos também fazer a versão aleatorizada do algoritmo:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>randomSelect(A,&nbsp;p,&nbsp;r,&nbsp;k):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;if&nbsp;p&nbsp;==&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A[p]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;q&nbsp;&lt;=&nbsp;randomParticione(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;if&nbsp;k&nbsp;=&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;A[q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;else&nbsp;if&nbsp;k&nbsp;&lt;&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;randomSelect(A,&nbsp;p,&nbsp;q-1,&nbsp;k)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;else&nbsp;return&nbsp;randomSelect(A,&nbsp;q+1,&nbsp;r,&nbsp;k-(q&nbsp;-&nbsp;p&nbsp;+&nbsp;1))</span></span></span>
+</div></pre>
+<p>Na linha 1, verificamos o melhor cenário para a recursão, o caso base. Se não, na linha 3, dividimos o vetor entre dois vetores possivelmente vazios (usando o particione que estudamos anteriormente). Na linha 4 computamos o número de elementos no primeiro subvetor. Se o nosso pivô for o k-ésimo número, isto é, o que procurávamos, o retornamos. Se não, chamamos recursivamente na metade correta.</p>
+<h4>Consumo de tempo esperado</h4>
+<ul>
+<li><span class="math"><script type="math/tex">X_{ab} = 1</script></span> se o primeiro pivô em <span class="math"><script type="math/tex">{a, \ldots, n}</script></span> é <span class="math"><script type="math/tex">a</script></span> ou <span class="math"><script type="math/tex">b</script></span>.</li>
+</ul>
+<span class="math"><script type="math/tex; mode=display">Pr\{X_{ab} = 1 =\} = \frac{1}{n - a + 1} + \frac{1}{n - a + 1} = E[X_{ab}].
+</script></span>
+<span class="math"><script type="math/tex; mode=display">E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}]\\ = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{n - a + 1}\\
+= \sum{a = 1}^{n-1} \frac{2(n - a)}{n - a + 1} < \sum{a = 1}^{n-1} 2 < 2n.
+</script></span>
+<p>Logo, o consumo de tempo esperado do algoritmo <em>randomSelect</em> é <span class="math"><script type="math/tex">\Theta(n)</script></span>.</p>
+<h3>Seleção em tempo linear</h3>
+<p>Se o pivô do particione for a mediana do vetor, qual seria o consumo de tempo do select? Linear!</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>selectBFPRT(A,&nbsp;p,&nbsp;r,&nbsp;i):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;if&nbsp;p&nbsp;==&nbsp;r</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;p&nbsp;//&nbsp;note&nbsp;que&nbsp;estamos&nbsp;trabalhando&nbsp;com&nbsp;índices,&nbsp;não&nbsp;valores</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;q&nbsp;=&nbsp;particioneBFPRT(A,&nbsp;p,&nbsp;r)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;if&nbsp;i&nbsp;=&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;q</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;else&nbsp;if&nbsp;i&nbsp;&lt;&nbsp;q&nbsp;-&nbsp;p&nbsp;+&nbsp;1:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;selectBFPRT(A,&nbsp;p,&nbsp;q-1,&nbsp;i)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;else&nbsp;return&nbsp;selectBFPRT(A,&nbsp;q+1,&nbsp;r,&nbsp;i-(q&nbsp;-&nbsp;p&nbsp;+&nbsp;1))</span></span></span>
+</div></pre>
+<p>Considere que particioneBFPRT rearranja A[p…r] da mesma forma que particione normal, e que <span class="math"><script type="math/tex">max{k-1, n-k} \leq \frac{7n}{3} + 3</script></span>, onde <span class="math"><script type="math/tex">n = r - p + 1</script></span> e <span class="math"><script type="math/tex">k = q - p + 1</script></span>. Suponha que <span class="math"><script type="math/tex">P(n)</script></span> é o consumo de tempo máximo do algoritmo <em>particioneBFPRT</em> quando <span class="math"><script type="math/tex">n = r - p + 1</script></span>.</p>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo de todas as execuções</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">P(n)</script></span></td>
+</tr>
+<tr>
+<td>4-6</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">T(k-1)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">T(n - k)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">\Theta(1) + P(n) + max{T(k-1), T(n-k)}</script></span></td>
+</tr>
+</tbody>
+</table>
+<span class="math"><script type="math/tex; mode=display">T(n) = \Theta(n) + P(n) + max{T(k-1), T(n-k)}
+
+     \leq \Theta(1) + P(n) + T(\lceil\frac{7n}{10}\rceil + 3)
+</script></span>
+<h4>Particione BFPRT</h4>
+<p>A ideia central do particione BFPRT é que a mediana das medianas é a mediana. Ou seja, dividimos um vetor em vetores menores, e para cada um deles, encontramos sua mediana. Ordenamos esses vetores pelas suas medianas, de forma que o elemento em <span class="math"><script type="math/tex">A[\lfloor (p+r)/2\rfloor]</script></span> é a mediana de A. Além disso, conseguimos eliminar diversos elementos para os quais não precisamos mais olhar, pois sabemos que, em cada vetor, os elementos menores do que a sua mediana são também menores do que a mediana das medianas, e analogamente para os maiores. Logo, o máximo de elementos para os quais teremos que olhar será:</p>
+<span class="math"><script type="math/tex; mode=display">max{k - 1, n - k} \leq n - (3 \lceil\frac{1}{2}\lceil\frac{n}{5}\rceil\rceil - 3) \leq n - (\frac{3n}{10} - 3) = \frac{7n}{10} + 3
+</script></span>
+<p>A ideia geral do algoritmo é:</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;divida&nbsp;o&nbsp;vetor&nbsp;em&nbsp;vetores&nbsp;de&nbsp;5&nbsp;elementos</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;ordene&nbsp;cada&nbsp;um&nbsp;deles</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;ordene,&nbsp;pela&nbsp;mediana&nbsp;dos&nbsp;subvetores,&nbsp;os&nbsp;subvetores</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;faça&nbsp;a&nbsp;partição&nbsp;dos&nbsp;elementos&nbsp;sobre&nbsp;os&nbsp;quais&nbsp;você&nbsp;não&nbsp;sabe&nbsp;nada&nbsp;a&nbsp;partir&nbsp;da&nbsp;mediana&nbsp;das&nbsp;medianas</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;a&nbsp;partição&nbsp;está&nbsp;feita</span></span></span>
+</div></pre>
+<p>O consumo de tempo será $P(n) = \Theta(n) + T(\lceil n/5\rceil)</p>
+<hr>
+<h2>Aula 7 - Ordenação em tempo linear</h2>
+<p><strong>Cormen 8</strong></p>
+<p>Não é possível ter consumo de tempo menor do que <span class="math"><script type="math/tex">O(n \lg n)</script></span> com um algoritmo de ordenação baseado em comparações. Isso porque eles são baseados em árvores de decisão.</p>
+<p>No pior caso, o número de comparações feito será igual à altura h da árvore. Todas as <span class="math"><script type="math/tex">n!</script></span> permutações de <span class="math"><script type="math/tex">1, \ldots, n</script></span> devem ser folhas, e toda árvore binária de altura h tem no máximo <span class="math"><script type="math/tex">2^h</script></span> folhas (provado por indução em h). Assim, devemos ter <span class="math"><script type="math/tex">2^h \geq n! \rightarrow h \geq \lg(n!)</script></span>.</p>
+<span class="math"><script type="math/tex; mode=display">(n!)^2 = \prod{i=0}^{n-1} (n-i)(i+1) \geq \prod{i=1}{n} n = n^n
+</script></span>
+<p>Portanto, <span class="math"><script type="math/tex">h \geq \lg(n!) \geq \frac{1}{2} n\lg n</script></span>. Assim concluímos que todo algoritmo de ordenação baseado em comparações faz <span class="math"><script type="math/tex">\Omega(n\lg n)</script></span> comparações no pior caso.</p>
+<h3>Counting sort</h3>
+<p>Recebe inteiros n e k e um vetor A[1…n] onde cada elemento é um inteiro entre 1 e k. Devolve um vetor B[1…n] com os elementos de A[1…n] em ordem crescente.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>countingSort(A,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;to&nbsp;k&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C[i]&nbsp;&lt;-&nbsp;0</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;for&nbsp;j&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;n&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C[A[j]]++</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;2&nbsp;to&nbsp;k&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C[i]&nbsp;+=&nbsp;C[i-1]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;for&nbsp;j&nbsp;&lt;-&nbsp;to&nbsp;n&nbsp;decreasing&nbsp;1&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B[C[A[j]]]&nbsp;&lt;-&nbsp;A[j]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C[A[j]]--</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>10.&nbsp;return&nbsp;B</span></span></span>
+</div></pre>
+<h4>Consumo de tempo</h4>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>consumo na linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(k)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">O(k)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math"><script type="math/tex">\Theta(k)</script></span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math"><script type="math/tex">O(k)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span class="math"><script type="math/tex">O(n)</script></span></td>
+</tr>
+<tr>
+<td>10</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">\Theta(k + n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Logo, se <span class="math"><script type="math/tex">k = O(n)</script></span>, o consumo de tempo é <span class="math"><script type="math/tex">\Theta(n)</script></span>.</p>
+<h3>Radix sort</h3>
+<p>Algoritmo usado para ordenar, por exemplo, inteiros não-negativos com d dígitos, ou strings com d caracteres.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>radixSort(A,&nbsp;n,&nbsp;d):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;d&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ordene(A,&nbsp;n,&nbsp;i)</span></span></span>
+</div></pre>
+<p><em>ordene(A, n, i)</em> ordena A[1…n] pelo i-ésimo dígito dos números em A por meio de um algoritmo estável. A ordenação estável só é relevante quando temos informação satélite.</p>
+<p>O consumo de tempo do Radixsort depende do algoritmo <em>ordene</em>. Se cada dígito é um inteiro de 1 a k (ou um caractere), podemos usar o <em>countingSort</em>. Neste caso, o consumo de tempo é <span class="math"><script type="math/tex">\Theta(d(k+n))</script></span>. Se d é limitado por uma constante e <span class="math"><script type="math/tex">k = O(n)</script></span>, então o consumo de tempo é <span class="math"><script type="math/tex">\Theta(n)</script></span>.</p>
+<h3>Bucket sort</h3>
+<p>Recebe um inteiro n e um vetor A[1…n] onde cada elemento é um número no intervalo <span class="math"><script type="math/tex">[0, 1)</script></span>. Devolve um vetor <span class="math"><script type="math/tex">C[1...n]</script></span> com os elementos de <span class="math"><script type="math/tex">A[1...n]</script></span> em ordem crescente.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>bucketSort(A,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B[i]&nbsp;&lt;-&nbsp;NULL</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;1&nbsp;to&nbsp;n&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;insert(B[ceiling(floor(nA[i]))],&nbsp;A[i])</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;for&nbsp;i&nbsp;&lt;-&nbsp;0&nbsp;to&nbsp;n&nbsp;-&nbsp;1&nbsp;do:</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orderList(B[i])</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;C&nbsp;&lt;-&nbsp;concatenate(B,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;return&nbsp;C</span></span></span>
+</div></pre>
+<ul>
+<li><em>insert</em>(p, x): insere x na lista apontada por p</li>
+<li><em>orderList(</em> p): ordena a lista apontada por p</li>
+<li><em>concatenate</em>(B, n): devolve a lista obtida da concatenação das listas apontadas por <span class="math"><script type="math/tex">B[0], \ldots, B[n-1]</script></span>.</li>
+</ul>
+<h4>Consumo de tempo</h4>
+<p>Suponha que os números em A[1…n] são uniformemente distribuídos no intervalo <span class="math"><script type="math/tex">[0, 1)</script></span>. Suponha que o <em>orderList</em> seja o <em>insertionSort</em>.</p>
+<p>Seja <span class="math"><script type="math/tex">X_i</script></span> o número de elementos na lista B[i].</p>
+<p>Seja <span class="math"><script type="math/tex">X_{ij} = 1</script></span> se o j-ésimo elemento foi para a lista B[i]. Observe que <span class="math"><script type="math/tex">X_i = \sum{j} X_{ij}</script></span>.</p>
+<p>Definimos <span class="math"><script type="math/tex">Y_i</script></span> como o número de comparações para ordenar a lista B[i].</p>
+<p>Observe que <span class="math"><script type="math/tex">Y_i \leq X_i^2</script></span>; logo, <span class="math"><script type="math/tex">E[Y_i] \leq E[X_i^2] = E[(\sum{j} X_{ij})^2]</script></span>. Além disso, <span class="math"><script type="math/tex">E[Y_i] \leq \sum{j} E[X_{ij}^2] + \sum{j}\sum{k\neq j} E[X_{ij}X_{ik}]</script></span>.</p>
+<p>Note que <span class="math"><script type="math/tex">X_{ij}^2</script></span> é uma variável aleatória binária, e <span class="math"><script type="math/tex">E[X_{ij}^2] = Pr[X_{ij}^2 = 1] = \frac{1}{n}</script></span>.</p>
+<p>Para calcular <span class="math"><script type="math/tex">E[X_{ij}X_{ik}], j \neq k</script></span>, primeiro note que se tratam de variáveis aleatórias independentes. Portanto, <span class="math"><script type="math/tex">E[X_{ij}X_{ik}] = $E[X_{ij}] E[X_{ik}]</script></span>. Ademais, <span class="math"><script type="math/tex">E[X_{ij}] = \frac{1}{n}</script></span>. Logo,</p>
+<span class="math"><script type="math/tex; mode=display">E[Y_i] \leq \sum{j}\frac{1}{n} + \sum{j}\sum{k \neq j}\frac{1}{n^2} = \frac{n}{n} + n(n-1)\frac{1}{n^2}
+= 1 + (n-1)\frac{1}{n} = 2 - \frac{1}{n}
+</script></span>
+<p>Agora, seja <span class="math"><script type="math/tex">Y = \sum{i} Y_i</script></span>. Note que que <span class="math"><script type="math/tex">Y</script></span> é o número de comparações realizadas pelo <em>bucketSort</em> no total. Assim, <span class="math"><script type="math/tex">E[Y]</script></span> é o número esperado de comparações realizadas pelo algoritmo, e tal numero determina o consumo assintótico de tempo do <em>bucketSort</em>.</p>
+<span class="math"><script type="math/tex; mode=display">E[Y] = \sum{i} E[Y_i] \leq 2n - 1 = O(n)
+</script></span>
+<hr>
+<h2>Aula 8 - Multiplicação</h2>
+<h3>Multiplicação de inteiros gigantescos</h3>
+<p><strong>KT cap 5.5</strong></p>
+<p>Seja n o número de algarismos em um inteiro. O problema consiste em, dados dois números inteiros X[1…n] e Y[1…n], calcular o produto XY.</p>
+<p>O algoritmo que conhecemos, do ensino fundamental, é <span class="math"><script type="math/tex">\Theta(n^2)</script></span>. Podemos fazer melhor, usando divisão e conquista.</p>
+<p>Seja X composto por dois inteiros A = [n…n/2] e B = [n/2…1] e Y por C = [n…n/2] e D = [n/2…1]. Então,</p>
+<span class="math"><script type="math/tex; mode=display">XY = AC \times 10^n + (AD + BC) \times 10^{\lceil n/2\rceil} + BD
+</script></span>
+<h4>O algoritmo</h4>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span>&nbsp;&nbsp;&nbsp;</span><span class="syntax--meta syntax--paragraph syntax--text"><span>mult(X,&nbsp;Y&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;n&nbsp;==&nbsp;1,&nbsp;devolva&nbsp;XY</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;teto(n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;=&nbsp;X[q+1...n],&nbsp;B&nbsp;=&nbsp;X[1...q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;Y[q+1...n],&nbsp;D&nbsp;=&nbsp;Y[1...q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;=&nbsp;mult(A,&nbsp;C,&nbsp;piso(n/2))</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;=&nbsp;mult(B,&nbsp;D,&nbsp;q)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;=&nbsp;mult(A,&nbsp;D,&nbsp;q)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;=&nbsp;mult(B,&nbsp;C,&nbsp;q)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;=&nbsp;E&nbsp;*&nbsp;10**n&nbsp;+&nbsp;(G&nbsp;+&nbsp;H)&nbsp;*&nbsp;10&nbsp;**&nbsp;q&nbsp;+&nbsp;F</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>10.&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;R</span></span></span>
+</div></pre>
+<h4>Consumo de tempo</h4>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>todas as execuções da linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math"><script type="math/tex">T(\lfloor n/2\rfloor)</script></span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil)</script></span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>10</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">T(\lfloor n/2\rfloor) + 3T(\lceil n/2\rceil) + \Theta(n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Sabemos que a solução da recorrência está na mesma classe <span class="math"><script type="math/tex">\Theta</script></span> que a solução de <span class="math"><script type="math/tex">T'(n) = 4T'(n/2) + n</script></span>.</p>
+<p>Conclusão: <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(n^2)</script></span>.</p>
+<h3>O algoritmo de Karatsuba</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>karatsuba(X,&nbsp;Y,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;n&nbsp;&lt;=&nbsp;3,&nbsp;devolva&nbsp;XY</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q&nbsp;=&nbsp;teto(n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;=&nbsp;X[q+1...n],&nbsp;B&nbsp;=&nbsp;X[1...q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;Y[q+1...n],&nbsp;D&nbsp;=&nbsp;Y[1...q]</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;=&nbsp;karatsuba(A,&nbsp;C,&nbsp;piso(n/2))</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;=&nbsp;karatsuba(B,&nbsp;D,&nbsp;q)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;=&nbsp;karatsuba(A&nbsp;+&nbsp;B,&nbsp;C&nbsp;+&nbsp;D,&nbsp;q&nbsp;+&nbsp;1)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;=&nbsp;G&nbsp;-&nbsp;F&nbsp;-&nbsp;E</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;=&nbsp;E&nbsp;*&nbsp;10**n&nbsp;+&nbsp;(H)&nbsp;*&nbsp;10&nbsp;**&nbsp;q&nbsp;+&nbsp;F</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>10.&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;R</span></span></span>
+</div></pre>
+<h4>Consumo de tempo</h4>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>todas as execuções da linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math"><script type="math/tex">T(\lfloor n/2\rfloor)</script></span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil)</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">T(\lceil n/2\rceil + 1)</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>10</td>
+<td><span class="math"><script type="math/tex">\Theta(n)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">T(\lfloor n/2\rfloor) + T(\lceil n/2\rceil) + T(\lceil n/2\rceil + 1) + \Theta(n)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Sabemos que a solução da recorrência está na mesma classe <span class="math"><script type="math/tex">\Theta</script></span> que a solução de <span class="math"><script type="math/tex">T'(n) = 3T'(n/2) + n</script></span>.</p>
+<p>Conclusão: <span class="math"><script type="math/tex">T(n)</script></span> é <span class="math"><script type="math/tex">\Theta(n^{\lg 3})</script></span>.</p>
+<h3>Multiplicação de matrizes</h3>
+<p>O problema consiste em, dadas duas matrizes X[1…n, 1…n] e Y[1…n, 1…n], calcular o produto XY. O algoritmo tradicional consome tempo <span class="math"><script type="math/tex">\Theta(n^3)</script></span>. Podemos fazer melhor por divisão e conquista, dividindo cada uma das matrizes em quatro menores.</p>
+<h4>O algoritmo</h4>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>multi-m(X,&nbsp;Y,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;n&nbsp;==&nbsp;1,&nbsp;devolva&nbsp;XY</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A,&nbsp;B,&nbsp;C,&nbsp;D)&nbsp;=&nbsp;particione(X,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(E,&nbsp;F,&nbsp;G,&nbsp;H)&nbsp;=&nbsp;particione(Y,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;=&nbsp;multi-m(A,&nbsp;E,&nbsp;n/2)&nbsp;+&nbsp;multi-m(B,&nbsp;G,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;=&nbsp;multi-m(A,&nbsp;F,&nbsp;n/2)&nbsp;+&nbsp;multi-m(B,&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;=&nbsp;multi-m(C,&nbsp;E,&nbsp;n/2)&nbsp;+&nbsp;multi-m(D,&nbsp;G,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;=&nbsp;multi-m(C,&nbsp;F,&nbsp;n/2)&nbsp;+&nbsp;multi-m(D,&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;=&nbsp;constroi-mat(R,&nbsp;S,&nbsp;T,&nbsp;U)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;P</span></span></span>
+</div></pre>
+<h4>Consumo de tempo</h4>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>todas as execuções da linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>3</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>4</td>
+<td><span class="math"><script type="math/tex">T(n/2) + T(n/2</script></span></td>
+</tr>
+<tr>
+<td>5</td>
+<td><span class="math"><script type="math/tex">T(n/2) + T(n/2</script></span></td>
+</tr>
+<tr>
+<td>6</td>
+<td><span class="math"><script type="math/tex">T(n/2) + T(n/2</script></span></td>
+</tr>
+<tr>
+<td>7</td>
+<td><span class="math"><script type="math/tex">T(n/2) + T(n/2</script></span></td>
+</tr>
+<tr>
+<td>8</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>9</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">8T(n/2) + \Theta(n^2)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Conclusão: o consumo de tempo do algoritmo multi-m é <span class="math"><script type="math/tex">\Theta(n^3)</script></span>.</p>
+<h4>O algoritmo de Strassen</h4>
+<pre class="editor-colors lang-text"><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>strassen(X,&nbsp;Y,&nbsp;n):</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;se&nbsp;n&nbsp;==&nbsp;1,&nbsp;devolva&nbsp;XY</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(A,&nbsp;B,&nbsp;C,&nbsp;D)&nbsp;=&nbsp;particione(X,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(E,&nbsp;F,&nbsp;G,&nbsp;H)&nbsp;=&nbsp;particione(Y,&nbsp;n)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P1&nbsp;=&nbsp;strassen(A,&nbsp;F&nbsp;-&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P2&nbsp;=&nbsp;strassen(A&nbsp;+&nbsp;B,&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P3&nbsp;=&nbsp;strassen(C&nbsp;+&nbsp;D,&nbsp;E,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P4&nbsp;=&nbsp;strassen(D,&nbsp;G&nbsp;-&nbsp;E,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P5&nbsp;=&nbsp;strassen(A&nbsp;+&nbsp;D,&nbsp;E&nbsp;+&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P6&nbsp;=&nbsp;strassen(B&nbsp;-&nbsp;D,&nbsp;G&nbsp;+&nbsp;H,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>10.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P7&nbsp;=&nbsp;strassen(A&nbsp;-&nbsp;C,&nbsp;E&nbsp;+&nbsp;F,&nbsp;n/2)</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>11.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;-&nbsp;P5&nbsp;+&nbsp;P4&nbsp;-&nbsp;P2&nbsp;+&nbsp;P6</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>12.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;=&nbsp;P1&nbsp;+&nbsp;P2</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>13.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T&nbsp;=&nbsp;P3&nbsp;+&nbsp;P4</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>14.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;U&nbsp;=&nbsp;P5&nbsp;+&nbsp;P1&nbsp;-&nbsp;P3&nbsp;-&nbsp;P7</span></span></span>
+</div><div class="line"><span class="syntax--text syntax--plain"><span class="syntax--meta syntax--paragraph syntax--text"><span>15.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;P&nbsp;=&nbsp;constroi-mat(R,&nbsp;S,&nbsp;T,&nbsp;U)</span></span></span>
+</div></pre>
+<h4>Consumo de tempo</h4>
+<table>
+<thead>
+<tr>
+<th>linha</th>
+<th>todas as execuções da linha</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span class="math"><script type="math/tex">\Theta(1)</script></span></td>
+</tr>
+<tr>
+<td>2-3</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>4-10</td>
+<td><span class="math"><script type="math/tex">7, T(n/2) + \Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>11-14</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>15</td>
+<td><span class="math"><script type="math/tex">\Theta(n^2)</script></span></td>
+</tr>
+<tr>
+<td>total</td>
+<td><span class="math"><script type="math/tex">7T(n/2) + \Theta(n^2)</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>Conclusão: o consumo de tempo do algoritmo multi-m é <span class="math"><script type="math/tex">\Theta(n^{\lg 7})</script></span>.</p>
+<hr>
+<h2>Aula 9 - Seleção em tempo linear</h2>
+<p>Fiz as anotações referentes a essa aula junto da aula 6, quando começamos a ver esse problema.</p>
+<p>FALOUS</p></body>
+</html>

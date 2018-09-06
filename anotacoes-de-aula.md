@@ -47,7 +47,9 @@
 
 O tempo de execução do algoritmo é a soma do número de execução para cada linha do código; uma linha que toma $c_i$ passos e é executada n vezes irá contribuir $c_in$ para o tempo de execução total. Denotamos o tempo de execução por T(n).
 
-$T(n) = c_1n + c_2(n - 1) + c_4(n - 1) + c_5\sum{j=2}^{n} t_j + c_6\sum{j=2}^{n} (t_j - 1) + c_7\sum{j=2}^{n} (t_j - 1) + c_8(n-1)$.
+\[
+T(n) = c_1n + c_2(n - 1) + c_4(n - 1) + c_5\sum_{j=2}^{n} t_j + c_6\sum_{j=2}^{n} (t_j - 1) + c_7\sum_{j=2}^{n} (t_j - 1) + c_8(n-1)
+\]
 
 
 ### O grande
@@ -242,7 +244,7 @@ Prova por indução em k, onde $k = \lg n$.
 
 Afirmação reescrita em termos de $k$: $T(2^k) = 2^k + k2^k$.
 
-Para $k = 0$, temos que T(2^0) = T(1) = 1 = 2^0 + 0.2^0$.
+Para $k = 0$, temos que $T(2^0) = T(1) = 1 = 2^0 + 0.2^0$.
 
 Para $k \geq 1$, suponha que $T(2^{k-1} = 2^{k-1} + (k-1)2^{k-1})$.
 
@@ -295,7 +297,7 @@ Note que não temos restrição no $n$ neste caso.
 
 O quicksort também aplica o paradigma da divisão e conquista.
 
-1. **Divisão**: particiona o vetor A[p...r] entre dois subvetores (possivelmente vazios) A[p...q-1] e A[q+1...r] tais que todos os elementos em A[p...q-1] sejam menores ou iguais a A[q] e em A[q+1...r] sejam maiores ou iguais a A[q]. 
+1. **Divisão**: particiona o vetor A[p...r] entre dois subvetores (possivelmente vazios) A[p...q-1] e A[q+1...r] tais que todos os elementos em A[p...q-1] sejam menores ou iguais a A[q] e em A[q+1...r] sejam maiores ou iguais a A[q].
 2. **Conquista**: ordena os dois subvetores por meio de chamadas recursivas.
 3. **Combinação**: como os subvetores já estão ordenados, o vetor está ordenado.
 
@@ -317,7 +319,7 @@ O problema da partição consiste em rearranjar um dado vetor A[p...r] tal que $
 1. x = A[r]
 2. i = p - 1
 3. for j = p to r-1:
-4.     if A[k] <= x
+4.     if A[j] <= x
 5.         i++
 6.         swap(A[i], A[j])
 7. swap(A[i + 1], A[r])
@@ -339,7 +341,7 @@ No começo de cada iteração de 3-6, temos:
 
 Em função de $n := r - p + 1$.
 
-O consumo de tempo do quicksort depende do balanceamento da partição, que por sua vez depende dos elementos usados para particionar. 
+O consumo de tempo do quicksort depende do balanceamento da partição, que por sua vez depende dos elementos usados para particionar.
 
 | linha | consumo de todas as execuções |
 | ----- | ----- |
@@ -369,7 +371,7 @@ Sendo que $0 \leq k := q - p \leq n - 1$.
 
 $T(n) :=$ consumo de tempo máximo quando $n = r - p + 1$.
 
-O comportamento do quicksort no pior caso ocorre quando o particionamento produz um subproblema com n - 1 elementos e outro com 0 elementos. O particionamento custa $\Theta(n)$, e como a chamada recursiva em vetores de 0 elementos apenas retorna, T(0) = \Theta(1). Assim, a recorrência de tempo será 
+O comportamento do quicksort no pior caso ocorre quando o particionamento produz um subproblema com n - 1 elementos e outro com 0 elementos. O particionamento custa $\Theta(n)$, e como a chamada recursiva em vetores de 0 elementos apenas retorna, T(0) = \Theta(1). Assim, a recorrência de tempo será
 
 \[
 T(n) = T(n - 1) + T(0) + \Theta(n) = T(n-1) + \Theta(n)
@@ -377,7 +379,7 @@ T(n) = T(n - 1) + T(0) + \Theta(n) = T(n-1) + \Theta(n)
 
 Intuitivamente, somando o custo em cada nível, teremos uma progressão aritmética que será avaliada em $\Theta(n^2)$.
 
-* **Recorrência cuidadosa**: $T(n)  = max {T(k) + T(n-k-1)} + \Theta(n)$; $0 \leq k \leq n-1.
+* **Recorrência cuidadosa**: $T(n)  = max {T(k) + T(n-k-1)} + \Theta(n)$; $0 \leq k \leq n-1$.
     - $T(0) = 1$
     - $T(1) = 1$
     - T(n) = max {T(k) + T(n-k-1)} + n$; $0 \leq k \leq n-1$ para $n = 2, 3, 4 \ldots$.
@@ -387,8 +389,8 @@ Vamos mostrar que $T(n) \leq n^2 + 1$ para $n \geq 0$.
 Prova: Trivial para $n \leq 1$. Se $n \geq 2$, então:
 
 \[
-T(n) = max {T(k) + T(n-k-1)} + n 
-(H.I.) \leq max {k^2 + 1 + (n - k - 1)^2 + 1} + n
+T(n) = max \{T(k) + T(n-k-1)\} + n \\
+(H.I.) \leq max \{k^2 + 1 + (n - k - 1)^2 + 1\} + n \\
 = n^2 - n + 3 \leq n^2 + 1.
 \]
 
@@ -402,16 +404,16 @@ Algumas conclusões:
 
 Na melhor divisão possível, cada um dos subvetores tem tamanho $k \leq \frac{n}{2}$. Na verdade, um terá tamanho $\lfloor n/2 \rfloor$ e outro $\lceil n/2 \rceil - 1$.
 
-Nesse caso, a recorrência será 
+Nesse caso, a recorrência será
 
 \[
-T(n) = 2T(n/2) + \a(n) = \Theta(n\lg n),
+T(n) = 2T(n/2) + \Theta(n) = \Theta(n\lg n),
 \]
 
 tolerando a remoção do piso, do teto e da subtração de 1. Alternativamente, tomamos $M(n) :=$ consumo de tempo mínimo quando $n = r - p + 1$.
 
 \[
-M(n) = min{M(k) + M(n - k - 1)} + \Theta(n); 0 \leq k \leq n-1
+M(n) = min\{M(k) + M(n - k - 1)\} + \Theta(n); 0 \leq k \leq n-1
 \]
 
 A prova de que $M(n) \geq (n+1)\lg (n+1)$ é análoga à prova anterior. Isso implica que no melhor caso o quicksort é $\Omega(n\lg n)$
@@ -435,13 +437,13 @@ Chamamos um algoritmo de **aleatorizado** se seu comportamento não é apenas de
 ### Um pouco de probabilidade
 
 * $(S, Pr)$ espaço de probabilidade.
-* $S = $ conjunto finito (eventos elementares).
+* $S =$ conjunto finito (eventos elementares).
 * $Pr\{\} =$ função distribuição de probabilidades, de $S$ em $[0, 1]$ tal que:
     - $Pr\{s\} \geq 0$
-    - $Pr\{s\} = 1$, onde $Pr\{U\}$ é abreviação de \sum_{u\in U} Pr\{u\}$.
+    - $Pr\{s\} = 1$, onde $Pr\{U\}$ é abreviação de $\sum_{u\in U} Pr\{u\}$.
 * Uma variável aleatória é uma função numérica definida sobre os eventos elementares.
     - $X = k$ é uma abreviação de $\{s\in S : X(s) = k\}$
-* Esperança: $E[x]$ = \sum X(s) Pr\{s\}$.
+* Esperança: $E[x] = \sum X(s) Pr\{s\}$.
 
 ### Problema do máximo
 
@@ -460,13 +462,13 @@ Quantas vezes a linha 4 é executada?
 
 Iremos supor que A[1...n] é uma permutação aleatória uniforme de 1, $\ldots$, n. Cada permutação tem probabilidade $\frac{1}{n!}$.
 
-* $X =$ número total de execuções da linha 4 = \sum X_i$.
+* $X =$ número total de execuções da linha 4 = $\sum X_i$.
 * $X_i = 1$ se a linha 4 é executada; $X_i$ é uma variável aleatória indicadora.
-* E[X_i] =$ probabilidade de que A[i] seja máximo em A[i...i] $= 1/i$.
+* $E[X_i] =$ probabilidade de que A[i] seja máximo em A[i...i] $= 1/i$.
 
 \[
-E[x] = E[X_n + \ldots + X_n] = E[X_1] + \ldots E[X_n]
-= 1/1 + 1/2 + \ldots + 1/n < 1 + \ln n
+E[x] = E[X_n + \ldots + X_n] = E[X_1] + \ldots E[X_n] \\
+= 1/1 + 1/2 + \ldots + 1/n < 1 + \ln n \\
 = \Theta(\lg n)
 \]
 
@@ -487,19 +489,21 @@ E[X_{ab}] = Pr\{X_{ab} = 1\} = \frac{1}{b - a + 1} + \frac{1}{b - a + 1}
 \]
 
 \[
-E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}]
-= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} Pr{X_{ab} = 1}
-= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{b - a + 1}
-= \sum{a = 1}^{n-1}\sum{k = 1}^{n-a} \frac{2}{k+1}
-< \sum{a = 1}^{n-1} 2\lparen \frac{1}{1} + \frac{1}{2} + \ldots + \frac{1}{n}\rparen
-< 2n\lparen 1(\ln n\rparen
+E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}] \\
+= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} Pr{X_{ab} = 1} \\
+= \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{b - a + 1} \\
+= \sum{a = 1}^{n-1}\sum{k = 1}^{n-a} \frac{2}{k+1} \\
+< \sum{a = 1}^{n-1} 2(\frac{1}{1} + \frac{1}{2} + \ldots + \frac{1}{n}) \\
+< 2n(1+\ln n)
 \]
+
+Note que limitamos o somatório pela série harmônica
 
 Logo, o consumo de tempo esperado do quicksort, quando sua entrada é uma permutação de $1, \ldots, n$ escolhida uniformemente é $O(n \log n)$.
 
 ----------------
 
-## Aula 6 - Algoritmos aleatorizados
+## Aulas 6 e 9 - Algoritmos aleatorizados, seleção
 
 **Cormen 7.3, 7.4, 9.2**
 
@@ -522,7 +526,7 @@ Para obter o consumo de tempo esperado, devemos contar o número esperado de com
 
 Encontrar o k-ésimo menor elemento de A[1...n], supondo que o vetor não tem elementos repetidos.
 
-A mediana é o \lfloor \frac{n+1}{2}\rfloor ou o \lceil\frac{n+1}{2}\rceil-ésimo menor elemento.
+A mediana é o $\lfloor \frac{n+1}{2}\rfloor$ ou o $\lceil\frac{n+1}{2}\rceil$-ésimo menor elemento.
 
 ```
    select-ord(A, n, k):
@@ -530,35 +534,119 @@ A mediana é o \lfloor \frac{n+1}{2}\rfloor ou o \lceil\frac{n+1}{2}\rceil-ésim
 2. return A[k]
 ```
 
-O consumo de tempo do _select-ord_ é $\Theta(n \lg n)$. Conseguimos fazer melhor para o menor elemento (percorrendo o vetor e guardando o valor do menor, analogamente ao algoritmo _MAX_). Para o segundo, fazemos um algoritmo semelhante, guardando o valor dos dois menores, e assim por diante. 
+O consumo de tempo do _select-ord_ é $\Theta(n \lg n)$. Conseguimos fazer melhor para o menor elemento (percorrendo o vetor e guardando o valor do menor, analogamente ao algoritmo _MAX_). Para o segundo, fazemos um algoritmo semelhante, guardando o valor dos dois menores, e assim por diante.
 
-Podemos usar o _particione_ do quicksort para selecionar a mediana ou o k-ésimo menor elemento em tempo linear.
+Podemos usar o _particione_ do quicksort para selecionar a mediana ou o k-ésimo menor elemento em tempo linear. Lembrando que o particione, visto na aula 4, consome tempo $\Theta(n)$.
+
+```
+   Select(A, p, r, k):
+1. if p == r
+2.     return A[p]
+3. q <= particione(A, p, r)
+4. if k = q - p + 1:
+5.     return A[q]
+6. else if k < q - p + 1:
+7.     return select(A, p, q-1, k)
+8. else return select(A, q+1, r, k-(q - p + 1))
+```
+
+| linha | consumo de todas as execuções |
+| ---   | --- |
+| 1-2 | $\Theta(1)$ |
+| 3 | $\Theta(n)$ |
+| 4-6 | $\Theta(1)$ |
+| 7 | $T(k-1)$ |
+| 8 | $T(n - k)$ |
+| total | $\Theta(n) + max{T(k-1), T(n-k)}$ |
+
+Pior caso: $T(n) = \Theta(n) + T(n-1) = \Theta(n^2)$.
+
+#### Solução aleatorizada
+
+Podemos também fazer a versão aleatorizada do algoritmo:
+
 
 ```
    randomSelect(A, p, r, k):
-1. if (p = r) return A[p]
-2. q <= randomParticione(A, p, r)
-3. if k = q - p + 1:
-4.     return A[q]
-5. if k < q - p + 1:
-6.     return randomSelect(A, p, q-1, k)
-7. else return randomSelect(A, q+1, r, k-(q - p + 1))
+1. if p == r
+2.     return A[p]
+3. q <= randomParticione(A, p, r)
+4. if k = q - p + 1:
+5.     return A[q]
+6. else if k < q - p + 1:
+7.     return randomSelect(A, p, q-1, k)
+8. else return randomSelect(A, q+1, r, k-(q - p + 1))
 ```
+
+Na linha 1, verificamos o melhor cenário para a recursão, o caso base. Se não, na linha 3, dividimos o vetor entre dois vetores possivelmente vazios (usando o particione que estudamos anteriormente). Na linha 4 computamos o número de elementos no primeiro subvetor. Se o nosso pivô for o k-ésimo número, isto é, o que procurávamos, o retornamos. Se não, chamamos recursivamente na metade correta.
 
 #### Consumo de tempo esperado
 
 * $X_{ab} = 1$ se o primeiro pivô em ${a, \ldots, n}$ é $a$ ou $b$.
 
 \[
-Pr\{X_{ab} = 1 =\} = \frac{1}{n - a + 1} + \frac{1}{n - a + 1} = E[X_{ab}]$.
+Pr\{X_{ab} = 1 =\} = \frac{1}{n - a + 1} + \frac{1}{n - a + 1} = E[X_{ab}].
 \]
 
 \[
-E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{n - a + 1}
+E[X] = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} E[X_{ab}]\\ = \sum{a = 1}^{n-1}\sum{b = a+1}^{n} \frac{2}{n - a + 1}\\
 = \sum{a = 1}^{n-1} \frac{2(n - a)}{n - a + 1} < \sum{a = 1}^{n-1} 2 < 2n.
 \]
 
-Logo, o consumo de tempo esperado do algoritmo _randomSelect_ é $O(n)$.
+Logo, o consumo de tempo esperado do algoritmo _randomSelect_ é $\Theta(n)$.
+
+### Seleção em tempo linear
+
+Se o pivô do particione for a mediana do vetor, qual seria o consumo de tempo do select? Linear!
+
+```
+   selectBFPRT(A, p, r, i):
+1. if p == r
+2.     return p // note que estamos trabalhando com índices, não valores
+3. q = particioneBFPRT(A, p, r)
+4. if i = q - p + 1:
+5.     return q
+6. else if i < q - p + 1:
+7.     return selectBFPRT(A, p, q-1, i)
+8. else return selectBFPRT(A, q+1, r, i-(q - p + 1))
+```
+
+Considere que particioneBFPRT rearranja A[p...r] da mesma forma que particione normal, e que $max{k-1, n-k} \leq \frac{7n}{3} + 3$, onde $n = r - p + 1$ e $k = q - p + 1$. Suponha que $P(n)$ é o consumo de tempo máximo do algoritmo _particioneBFPRT_ quando $n = r - p + 1$.
+
+| linha | consumo de todas as execuções |
+| ---   | --- |
+| 1-2 | $\Theta(1)$ |
+| 3 | $P(n)$ |
+| 4-6 | $\Theta(1)$ |
+| 7 | $T(k-1)$ |
+| 8 | $T(n - k)$ |
+| total | $\Theta(1) + P(n) + max{T(k-1), T(n-k)}$ |
+
+\[
+T(n) = \Theta(n) + P(n) + max{T(k-1), T(n-k)}
+
+     \leq \Theta(1) + P(n) + T(\lceil\frac{7n}{10}\rceil + 3)
+\]
+
+#### Particione BFPRT
+
+A ideia central do particione BFPRT é que a mediana das medianas é a mediana. Ou seja, dividimos um vetor em vetores menores, e para cada um deles, encontramos sua mediana. Ordenamos esses vetores pelas suas medianas, de forma que o elemento em $A[\lfloor (p+r)/2\rfloor]$ é a mediana de A. Além disso, conseguimos eliminar diversos elementos para os quais não precisamos mais olhar, pois sabemos que, em cada vetor, os elementos menores do que a sua mediana são também menores do que a mediana das medianas, e analogamente para os maiores. Logo, o máximo de elementos para os quais teremos que olhar será:
+
+\[
+max{k - 1, n - k} \leq n - (3 \lceil\frac{1}{2}\lceil\frac{n}{5}\rceil\rceil - 3) \leq n - (\frac{3n}{10} - 3) = \frac{7n}{10} + 3
+\]
+
+A ideia geral do algoritmo é:
+
+```
+1. divida o vetor em vetores de 5 elementos
+2. ordene cada um deles
+3. ordene, pela mediana dos subvetores, os subvetores
+4. faça a partição dos elementos sobre os quais você não sabe nada a partir da mediana das medianas
+5. a partição está feita
+```
+
+O consumo de tempo será $P(n) = \Theta(n) + T(\lceil n/5\rceil)
 
 --------------
 
@@ -566,15 +654,15 @@ Logo, o consumo de tempo esperado do algoritmo _randomSelect_ é $O(n)$.
 
 **Cormen 8**
 
-Não é possível ter consumo de tempo menor do que $O(n \lg n)$ com um algoritmo de ordenação baseado em comparações. Isso porque eles são baseados em árvores de decisão. 
+Não é possível ter consumo de tempo menor do que $O(n \lg n)$ com um algoritmo de ordenação baseado em comparações. Isso porque eles são baseados em árvores de decisão.
 
-No pior caso, o número de comparações feito será igual à altura h da árvore. Todas as $n!$ permutações de $1, \ldots, n$ devem ser folhas, e toda árvore binária de altura h tem no máximo $2^h$ folhas (provado por indução em h). Assim, devemos ter $2^h \geq n! \rarrow h \geq \lg(n!)$.
+No pior caso, o número de comparações feito será igual à altura h da árvore. Todas as $n!$ permutações de $1, \ldots, n$ devem ser folhas, e toda árvore binária de altura h tem no máximo $2^h$ folhas (provado por indução em h). Assim, devemos ter $2^h \geq n! \rightarrow h \geq \lg(n!)$.
 
 \[
 (n!)^2 = \prod{i=0}^{n-1} (n-i)(i+1) \geq \prod{i=1}{n} n = n^n
 \]
 
-Portanto, $h \geq \lg(n!) \geq \frac{1}{2} n\lg n. Assim concluímos que todo algoritmo de ordenação baseado em comparações faz $\Omega(n\lg n)$ comparações no pior caso.
+Portanto, $h \geq \lg(n!) \geq \frac{1}{2} n\lg n$. Assim concluímos que todo algoritmo de ordenação baseado em comparações faz $\Omega(n\lg n)$ comparações no pior caso.
 
 ### Counting sort
 
@@ -607,7 +695,7 @@ Recebe inteiros n e k e um vetor A[1...n] onde cada elemento é um inteiro entre
 | 7 | $\Theta(n)$ |
 | 8 | $O(n)$ |
 | 9 | $O(n)$ |
-| 10 | $\Theta(1) |
+| 10 | $\Theta(1)$ |
 | total | $\Theta(k + n)$ |
 
 Logo, se $k = O(n)$, o consumo de tempo é $\Theta(n)$.
@@ -643,32 +731,200 @@ Recebe um inteiro n e um vetor A[1...n] onde cada elemento é um número no inte
 ```
 
 * _insert_(p, x): insere x na lista apontada por p
-* _orderList_(p): ordena a lista apontada por p
+* _orderList(_ p): ordena a lista apontada por p
 * _concatenate_(B, n): devolve a lista obtida da concatenação das listas apontadas por $B[0], \ldots, B[n-1]$.
 
 #### Consumo de tempo
 
-Suponha que os números em A[1...n] são uniformemente distribuídos no intervalo $[0, 1)$. Suponha que o _orderList_ seja o _insertionSort_. 
+Suponha que os números em A[1...n] são uniformemente distribuídos no intervalo $[0, 1)$. Suponha que o _orderList_ seja o _insertionSort_.
 
 Seja $X_i$ o número de elementos na lista B[i].
 
-Seja $X_{ij} = 1$ se o j-ésimo elemento foi para a lista B[i]. Observe que $X_i = \sum{j} X_{ij}.
+Seja $X_{ij} = 1$ se o j-ésimo elemento foi para a lista B[i]. Observe que $X_i = \sum{j} X_{ij}$.
 
 Definimos $Y_i$ como o número de comparações para ordenar a lista B[i].
 
-Observe que $Y_i \leq X_i^2$; logo, $E[Y_i] \leq E[X_i^2]$ = E[(\sum{j} X_{ij})^2]. Além disso, $E[Y_i] \leq \sum{j} E[X_{ij}^2] + \sum{j}\sum{k\neq j} E[X_{ij}X_{ik}]$.
+Observe que $Y_i \leq X_i^2$; logo, $E[Y_i] \leq E[X_i^2] = E[(\sum{j} X_{ij})^2]$. Além disso, $E[Y_i] \leq \sum{j} E[X_{ij}^2] + \sum{j}\sum{k\neq j} E[X_{ij}X_{ik}]$.
 
-Note que $X_{ij}^2$ é uma variável aleatória binária, e $E[X_{ij}^2] = Pr[X_{ij}^2 = 1] = \frac{1}{n}.
+Note que $X_{ij}^2$ é uma variável aleatória binária, e $E[X_{ij}^2] = Pr[X_{ij}^2 = 1] = \frac{1}{n}$.
 
-Para calcular $E[X_{ij}X_{ik}], j \neq k$, primeiro note que se tratam de variáveis aleatórias independentes. Portanto, $E[X_{ij}X_{ik}] = $E[X_{ij}] E[X_{ik}]$. Ademais, $E[X_{ij}] = \frac{1}{n}. Logo,
+Para calcular $E[X_{ij}X_{ik}], j \neq k$, primeiro note que se tratam de variáveis aleatórias independentes. Portanto, $E[X_{ij}X_{ik}] = $E[X_{ij}] E[X_{ik}]$. Ademais, $E[X_{ij}] = \frac{1}{n}$. Logo,
 
 \[
 E[Y_i] \leq \sum{j}\frac{1}{n} + \sum{j}\sum{k \neq j}\frac{1}{n^2} = \frac{n}{n} + n(n-1)\frac{1}{n^2}
 = 1 + (n-1)\frac{1}{n} = 2 - \frac{1}{n}
 \]
 
-Agora, seja $Y = \sum{i} Y_i$. Notque que $Y$ é o número de comparações realizadas pelo _bucketSort_ no total. Assim, $E[Y]$ é o número esperado de comparações realizadas pelo algoritmo, e tal numero determina o consumo assintótico de tempo do _bucketSort_. 
+Agora, seja $Y = \sum{i} Y_i$. Note que que $Y$ é o número de comparações realizadas pelo _bucketSort_ no total. Assim, $E[Y]$ é o número esperado de comparações realizadas pelo algoritmo, e tal numero determina o consumo assintótico de tempo do _bucketSort_.
 
 \[
 E[Y] = \sum{i} E[Y_i] \leq 2n - 1 = O(n)
 \]
+
+--------------------
+
+## Aula 8 - Multiplicação
+
+### Multiplicação de inteiros gigantescos
+**KT cap 5.5**
+
+Seja n o número de algarismos em um inteiro. O problema consiste em, dados dois números inteiros X[1...n] e Y[1...n], calcular o produto XY.
+
+O algoritmo que conhecemos, do ensino fundamental, é $\Theta(n^2)$. Podemos fazer melhor, usando divisão e conquista.
+
+Seja X composto por dois inteiros A = [n...n/2] e B = [n/2...1] e Y por C = [n...n/2] e D = [n/2...1]. Então,
+
+\[
+XY = AC \times 10^n + (AD + BC) \times 10^{\lceil n/2\rceil} + BD
+\]
+
+#### O algoritmo
+
+```
+   mult(X, Y n):
+1.     se n == 1, devolva XY
+2.     q = teto(n/2)
+3.     A = X[q+1...n], B = X[1...q]
+4.     C = Y[q+1...n], D = Y[1...q]
+5.     E = mult(A, C, piso(n/2))
+6.     F = mult(B, D, q)
+7.     G = mult(A, D, q)
+8.     H = mult(B, C, q)
+9.     R = E * 10**n + (G + H) * 10 ** q + F
+10.    return R
+```
+
+#### Consumo de tempo
+
+| linha | todas as execuções da linha |
+| ---   | --- |
+| 1 | $\Theta(1)$ |
+| 2 | $\Theta(1)$ |
+| 3 | $\Theta(n)$ |
+| 4 | $\Theta(n)$ |
+| 5 | $T(\lfloor n/2\rfloor)$ |
+| 6 | $T(\lceil n/2\rceil)$ |
+| 7 | $T(\lceil n/2\rceil)$ |
+| 8 | $T(\lceil n/2\rceil)$ |
+| 9 | $\Theta(n)$ |
+| 10 | $\Theta(n)$ |
+| total | $T(\lfloor n/2\rfloor) + 3T(\lceil n/2\rceil) + \Theta(n)$ |
+
+Sabemos que a solução da recorrência está na mesma classe $\Theta$ que a solução de $T'(n) = 4T'(n/2) + n$.
+
+Conclusão: $T(n)$ é $\Theta(n^2)$.
+
+### O algoritmo de Karatsuba
+
+```
+karatsuba(X, Y, n):
+1.     se n <= 3, devolva XY
+2.     q = teto(n/2)
+3.     A = X[q+1...n], B = X[1...q]
+4.     C = Y[q+1...n], D = Y[1...q]
+5.     E = karatsuba(A, C, piso(n/2))
+6.     F = karatsuba(B, D, q)
+7.     G = karatsuba(A + B, C + D, q + 1)
+8.     H = G - F - E
+9.     R = E * 10**n + (H) * 10 ** q + F
+10.    return R
+```
+
+#### Consumo de tempo
+
+| linha | todas as execuções da linha |
+| ---   | --- |
+| 1 | $\Theta(1)$ |
+| 2 | $\Theta(1)$ |
+| 3 | $\Theta(n)$ |
+| 4 | $\Theta(n)$ |
+| 5 | $T(\lfloor n/2\rfloor)$ |
+| 6 | $T(\lceil n/2\rceil)$ |
+| 7 | $T(\lceil n/2\rceil + 1)$ |
+| 8 | $\Theta(n)$ |
+| 9 | $\Theta(n)$ |
+| 10 | $\Theta(n)$ |
+| total | $T(\lfloor n/2\rfloor) + T(\lceil n/2\rceil) + T(\lceil n/2\rceil + 1) + \Theta(n)$ |
+
+Sabemos que a solução da recorrência está na mesma classe $\Theta$ que a solução de $T'(n) = 3T'(n/2) + n$.
+
+Conclusão: $T(n)$ é $\Theta(n^{\lg 3})$.
+
+### Multiplicação de matrizes
+
+O problema consiste em, dadas duas matrizes X[1...n, 1...n] e Y[1...n, 1...n], calcular o produto XY. O algoritmo tradicional consome tempo $\Theta(n^3)$. Podemos fazer melhor por divisão e conquista, dividindo cada uma das matrizes em quatro menores.
+
+#### O algoritmo
+
+```
+multi-m(X, Y, n):
+1.     se n == 1, devolva XY
+2.     (A, B, C, D) = particione(X, n)
+3.     (E, F, G, H) = particione(Y, n)
+4.     R = multi-m(A, E, n/2) + multi-m(B, G, n/2)
+5.     S = multi-m(A, F, n/2) + multi-m(B, H, n/2)
+6.     T = multi-m(C, E, n/2) + multi-m(D, G, n/2)
+7.     U = multi-m(C, F, n/2) + multi-m(D, H, n/2)
+8.     P = constroi-mat(R, S, T, U)
+9.     return P
+```
+
+#### Consumo de tempo
+
+| linha | todas as execuções da linha |
+| ---   | --- |
+| 1 | $\Theta(1)$ |
+| 2 | $\Theta(n^2)$ |
+| 3 | $\Theta(n^2)$ |
+| 4 | $T(n/2) + T(n/2$ |
+| 5 | $T(n/2) + T(n/2$ |
+| 6 | $T(n/2) + T(n/2$ |
+| 7 | $T(n/2) + T(n/2$ |
+| 8 | $\Theta(n^2)$ |
+| 9 | $\Theta(n^2)$ |
+| total | $8T(n/2) + \Theta(n^2)$ |
+
+Conclusão: o consumo de tempo do algoritmo multi-m é $\Theta(n^3)$.
+
+#### O algoritmo de Strassen
+
+
+```
+strassen(X, Y, n):
+1.      se n == 1, devolva XY
+2.      (A, B, C, D) = particione(X, n)
+3.      (E, F, G, H) = particione(Y, n)
+4.      P1 = strassen(A, F - H, n/2)
+5.      P2 = strassen(A + B, H, n/2)
+6.      P3 = strassen(C + D, E, n/2)
+7.      P4 = strassen(D, G - E, n/2)
+8.      P5 = strassen(A + D, E + H, n/2)
+9.      P6 = strassen(B - D, G + H, n/2)
+10.     P7 = strassen(A - C, E + F, n/2)
+11.     R - P5 + P4 - P2 + P6
+12.     S = P1 + P2
+13.     T = P3 + P4
+14.     U = P5 + P1 - P3 - P7
+15.     return P = constroi-mat(R, S, T, U)
+```
+
+#### Consumo de tempo
+
+| linha | todas as execuções da linha |
+| ---   | --- |
+| 1 | $\Theta(1)$ |
+| 2-3 | $\Theta(n^2)$ |
+| 4-10 | $7, T(n/2) + \Theta(n^2)$ |
+| 11-14 | $\Theta(n^2)$ |
+| 15 | $\Theta(n^2)$ |
+| total | $7T(n/2) + \Theta(n^2)$ |
+
+Conclusão: o consumo de tempo do algoritmo multi-m é $\Theta(n^{\lg 7})$.
+
+---------------
+
+## Aula 9 - Seleção em tempo linear
+
+Fiz as anotações referentes a essa aula junto da aula 6, quando começamos a ver esse problema.
+
+FALOUS
